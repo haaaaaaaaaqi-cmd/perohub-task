@@ -196,408 +196,26 @@
     opacity: 1;
   }
 
-  /* ==================== Settings Page ==================== */
-  .settings-page {
-    display: flex;
-    height: 100%;
-    background: var(--bg-primary);
-  }
-
-  .settings-sidebar {
-    width: 240px;
-    min-width: 240px;
-    background: var(--bg-secondary);
-    border-right: 1px solid var(--border-color);
-    padding: 20px 0;
-    overflow-y: auto;
-    flex-shrink: 0;
-  }
-
-  .settings-sidebar-header {
-    padding: 0 20px 16px;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 8px;
-  }
-
-  .settings-sidebar-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .settings-nav-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 9px 20px;
-    cursor: pointer;
-    color: var(--text-secondary);
-    font-size: 13px;
-    transition: all var(--transition);
-    border-left: 3px solid transparent;
-  }
-
-  .settings-nav-item:hover {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-  }
-
-  .settings-nav-item.active {
-    background: var(--accent-soft);
-    color: var(--accent);
-    border-left-color: var(--accent);
-  }
-
-  .settings-nav-item svg {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-  }
-
-  .settings-content {
-    flex: 1;
-    overflow-y: auto;
-    padding: 32px 40px;
-  }
-
-  .settings-section {
-    display: none;
-    max-width: 720px;
-  }
-  .settings-section.active {
-    display: block;
-    animation: settingsFadeIn 0.2s ease;
-  }
-
-  @keyframes settingsFadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .settings-section-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 4px;
-  }
-
-  .settings-section-desc {
-    font-size: 13px;
-    color: var(--text-tertiary);
-    margin-bottom: 28px;
-  }
-
-  .settings-group {
-    margin-bottom: 28px;
-  }
-
-  .settings-group-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .settings-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-    gap: 16px;
-  }
-
-  .settings-row-info {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .settings-row-label {
-    font-size: 14px;
-    color: var(--text-primary);
-    font-weight: 500;
-  }
-
-  .settings-row-desc {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    margin-top: 2px;
-    line-height: 1.4;
-  }
-
-  .settings-control {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
   /* Toggle switch */
-  .settings-toggle {
-    position: relative;
-    width: 44px;
-    height: 24px;
-    cursor: pointer;
-    display: inline-block;
-  }
-  .settings-toggle input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .settings-toggle-slider {
-    position: absolute;
-    inset: 0;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-light);
-    border-radius: 12px;
-    transition: var(--transition);
-  }
-  .settings-toggle-slider::before {
-    content: '';
-    position: absolute;
-    width: 18px; height: 18px;
-    left: 2px; top: 2px;
-    background: var(--text-secondary);
-    border-radius: 50%;
-    transition: var(--transition);
-  }
-  .settings-toggle input:checked + .settings-toggle-slider {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-  }
-  .settings-toggle input:checked + .settings-toggle-slider::before {
-    transform: translateX(20px);
-    background: var(--accent);
-  }
 
   /* Select dropdown */
-  .settings-select {
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-sm);
-    color: var(--text-primary);
-    padding: 6px 28px 6px 12px;
-    font-size: 13px;
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-    min-width: 140px;
-  }
-  .settings-select:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
 
   /* Number / text input */
-  .settings-input {
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-sm);
-    color: var(--text-primary);
-    padding: 6px 12px;
-    font-size: 13px;
-    width: 120px;
-    text-align: center;
-  }
-  .settings-input:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
 
   /* Range slider */
-  .settings-range {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 160px;
-    height: 6px;
-    background: var(--bg-elevated);
-    border-radius: 3px;
-    outline: none;
-  }
-  .settings-range::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 16px; height: 16px;
-    background: var(--accent);
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .settings-range::-moz-range-thumb {
-    width: 16px; height: 16px;
-    background: var(--accent);
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
-  }
-  .settings-range-value {
-    font-size: 13px;
-    color: var(--accent);
-    font-weight: 600;
-    min-width: 40px;
-    text-align: right;
-  }
 
   /* Color swatches */
-  .settings-color-swatches {
-    display: flex;
-    gap: 8px;
-  }
-  .settings-color-swatch {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: var(--transition);
-  }
-  .settings-color-swatch.active {
-    border-color: var(--text-primary);
-    box-shadow: 0 0 0 2px var(--bg-primary);
-  }
-  .settings-color-swatch:hover {
-    transform: scale(1.1);
-  }
 
   /* Radio card group */
-  .settings-radio-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
-  }
-  .settings-radio-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    padding: 14px 8px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: var(--transition);
-    text-align: center;
-  }
-  .settings-radio-card:hover {
-    border-color: var(--border-light);
-    background: var(--bg-hover);
-  }
-  .settings-radio-card.active {
-    border-color: var(--accent);
-    background: var(--accent-soft);
-  }
-  .settings-radio-card-icon {
-    font-size: 24px;
-    line-height: 1;
-  }
-  .settings-radio-card-label {
-    font-size: 12px;
-    color: var(--text-secondary);
-  }
-  .settings-radio-card.active .settings-radio-card-label {
-    color: var(--accent);
-  }
 
   /* Button */
-  .settings-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 16px;
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid var(--border-color);
-    background: var(--bg-elevated);
-    color: var(--text-primary);
-    transition: var(--transition);
-  }
-  .settings-btn:hover {
-    background: var(--bg-hover);
-    border-color: var(--border-light);
-  }
-  .settings-btn-primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--bg-primary);
-  }
-  .settings-btn-primary:hover {
-    background: var(--accent-hover);
-  }
-  .settings-btn-danger {
-    border-color: var(--danger);
-    color: var(--danger);
-  }
-  .settings-btn-danger:hover {
-    background: rgba(248, 113, 113, 0.12);
-  }
 
   /* Info card */
-  .settings-info-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 16px 20px;
-    margin-bottom: 16px;
-  }
 
-  .settings-info-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 0;
-    font-size: 13px;
-  }
-  .settings-info-row + .settings-info-row {
-    border-top: 1px solid var(--border-color);
-  }
-  .settings-info-key {
-    color: var(--text-tertiary);
-  }
-  .settings-info-val {
-    color: var(--text-primary);
-    font-weight: 500;
-  }
 
   /* Storage usage bar */
-  .settings-storage-bar {
-    width: 100%;
-    height: 8px;
-    background: var(--bg-elevated);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 8px;
-  }
-  .settings-storage-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--purple));
-    border-radius: 4px;
-    transition: width 0.4s ease;
-  }
 
   /* About logo */
-  .settings-about-logo {
-    width: 64px; height: 64px;
-    border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, var(--accent), var(--purple));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--bg-primary);
-    margin-bottom: 12px;
-  }
-
-  .settings-page.hidden { display: none !important; }
 
   /* ============================================================ */
   /* Daily Report Module                                          */
@@ -2837,10 +2455,324 @@
     font-weight: 700;
     color: var(--text-primary);
   }
+  .daily-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all var(--transition);
+  }
+  .daily-back-btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
   .daily-toolbar-right {
     display: flex;
     align-items: center;
     gap: 8px;
+  }
+
+  /* ===== 我的主页 Toggle Group ===== */
+  .home-toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 3px;
+  }
+  .home-toggle-btn {
+    padding: 5px 14px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition);
+    white-space: nowrap;
+    font-family: inherit;
+  }
+  .home-toggle-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+  }
+  .home-toggle-btn.active {
+    background: var(--accent);
+    color: #0b0f17;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  /* ===== 我的主页 公共 section 标题 ===== */
+  .home-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 24px 0 16px;
+  }
+
+  /* ===== 高光 tab ===== */
+  .home-highlight-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .home-highlight-stat {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+  }
+  .home-highlight-stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .home-highlight-stat-label {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-top: 4px;
+  }
+  .home-highlight-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all var(--transition);
+    border-left: 3px solid var(--warning);
+  }
+  .home-highlight-card:hover {
+    border-color: var(--warning);
+    background: var(--bg-tertiary);
+    transform: translateX(2px);
+  }
+  .home-highlight-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .home-highlight-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
+  }
+  .home-highlight-day {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+  .home-highlight-month {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+  }
+  .home-highlight-card-title {
+    flex: 1;
+  }
+  .home-highlight-score {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: right;
+    min-width: 50px;
+  }
+  .home-highlight-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color);
+  }
+  .home-highlight-task-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    background: var(--bg-elevated);
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--success);
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .home-highlight-note {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-style: italic;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* ===== 寄语 tab ===== */
+  .home-message-timeline {
+    position: relative;
+    padding-left: 8px;
+  }
+  .home-message-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    cursor: pointer;
+    transition: all var(--transition);
+    border-radius: var(--radius-sm);
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .home-message-item:hover {
+    background: var(--bg-secondary);
+  }
+  .home-message-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 6px;
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .home-message-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .home-message-date {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+  }
+  .home-message-text {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* ===== 个人资料 tab ===== */
+  .home-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .home-profile-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .home-profile-info {
+    flex: 1;
+  }
+  .home-profile-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .home-profile-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .home-profile-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .home-profile-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--bg-elevated);
+  }
+  .home-profile-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .home-profile-stat {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+  }
+  .home-profile-stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .home-profile-stat-label {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-top: 4px;
+  }
+  .home-profile-detail {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 8px 24px;
+  }
+  .home-profile-detail-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .home-profile-detail-row:last-child {
+    border-bottom: none;
+  }
+  .home-profile-detail-label {
+    width: 120px;
+    font-size: 13px;
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+  }
+  .home-profile-detail-value {
+    flex: 1;
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
   }
 
   /* ===== Daily Search Box ===== */
@@ -2917,6 +2849,41 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+
+  /* ===== Daily Pagination ===== */
+  .daily-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 12px 0;
+  }
+  .daily-page-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .daily-page-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .daily-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .daily-page-info {
+    font-size: 13px;
+    color: var(--text-tertiary);
   }
 
   /* ===== Daily Report Card (base) ===== */
@@ -3281,6 +3248,35 @@
     padding: 48px 0;
     color: var(--text-tertiary);
     font-size: 14px;
+  }
+
+  /* ===== Workbench sections ===== */
+  .wb-section {
+    margin-bottom: 24px;
+  }
+  .wb-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    padding-left: 4px;
+  }
+  .wb-section-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .wb-section-count {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    background: var(--bg-elevated);
+    padding: 1px 8px;
+    border-radius: 10px;
   }
 
   /* ===== Daily Group (Roster section headers) ===== */
@@ -3917,85 +3913,12 @@
   }
 
   /* Settings textarea */
-  .settings-textarea {
-    width: 100%;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-sm);
-    color: var(--text-primary);
-    padding: 8px 12px;
-    font-size: 13px;
-    resize: vertical;
-    min-height: 60px;
-    font-family: inherit;
-  }
-  .settings-textarea:focus { outline: none; border-color: var(--accent); }
-
   /* Settings badge */
-  .settings-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: 600;
-    background: var(--accent-soft);
-    color: var(--accent);
-  }
-  .settings-badge-warning { background: rgba(251, 191, 36, 0.15); color: var(--warning); }
-  .settings-badge-danger { background: rgba(248, 113, 113, 0.15); color: var(--danger); }
-
   /* Settings shortcut list */
-  .settings-shortcut-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .settings-shortcut-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 0;
-    font-size: 13px;
-  }
-  .settings-shortcut-row + .settings-shortcut-row {
-    border-top: 1px solid var(--border-color);
-  }
-  .settings-shortcut-key {
-    display: inline-flex;
-    gap: 4px;
-  }
-  .settings-shortcut-key kbd {
-    display: inline-block;
-    padding: 2px 8px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-light);
-    border-radius: 4px;
-    font-size: 11px;
-    font-family: monospace;
-    color: var(--text-secondary);
-  }
 
   /* Settings divider */
-  .settings-divider {
-    height: 1px;
-    background: var(--border-color);
-    margin: 20px 0;
-  }
 
   /* Settings danger zone */
-  .settings-danger-zone {
-    border: 1px solid rgba(248, 113, 113, 0.3);
-    border-radius: var(--radius-md);
-    padding: 20px;
-    margin-top: 8px;
-  }
-  .settings-danger-zone-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--danger);
-    margin-bottom: 12px;
-  }
 </style>
 </head>
 <body>
@@ -4010,51 +3933,7 @@
       <span class="module-nav-label">任务</span>
       <span class="module-nav-tooltip">任务</span>
     </div>
-    <div class="module-nav-item" data-module="settings" onclick="switchModule('settings')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-      <span class="module-nav-label">设置</span>
-      <span class="module-nav-tooltip">设置</span>
-    </div>
   </nav>
-
-  <!-- Settings Page -->
-  <div class="settings-page hidden" id="settingsPage">
-    <nav class="settings-sidebar">
-      <div class="settings-sidebar-header">
-        <div class="settings-sidebar-title">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          设置
-        </div>
-      </div>
-      <div class="settings-nav-item active" data-settings-tab="general" onclick="switchSettingsTab('general')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/></svg>
-        <span>通用</span>
-      </div>
-      <div class="settings-nav-item" data-settings-tab="appearance" onclick="switchSettingsTab('appearance')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"/></svg>
-        <span>外观</span>
-      </div>
-      <div class="settings-nav-item" data-settings-tab="workspace" onclick="switchSettingsTab('workspace')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        <span>工作区</span>
-      </div>
-      <div class="settings-nav-item" data-settings-tab="data" onclick="switchSettingsTab('data')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-        <span>数据与存储</span>
-      </div>
-      <div class="settings-nav-item" data-settings-tab="shortcuts" onclick="switchSettingsTab('shortcuts')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M6 16h.01M10 16h.01M14 16h.01M18 16h.01"/></svg>
-        <span>快捷键</span>
-      </div>
-      <div class="settings-nav-item" data-settings-tab="about" onclick="switchSettingsTab('about')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-        <span>关于</span>
-      </div>
-    </nav>
-    <div class="settings-content" id="settingsContent">
-      <!-- Rendered dynamically -->
-    </div>
-  </div>
 
   <!-- Daily Report Page -->
   <div class="daily-page hidden" id="dailyPage">
@@ -4073,7 +3952,7 @@
       </div>
       <div class="daily-nav-item" data-daily-tab="mine" onclick="switchDailyTab('mine')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>日报</span>
+        <span>我的主页</span>
         <span class="daily-nav-badge" id="dailyMineBadge">0</span>
       </div>
       <div class="daily-nav-item" data-daily-tab="roster" onclick="switchDailyTab('roster')">
@@ -4252,11 +4131,11 @@ const DAILY_STORAGE_KEY = 'resourceHub_dailyReports';
 const DAILY_SETTINGS_KEY = 'resourceHub_dailySettings';
 
 const DAILY_DEPARTMENTS = [
-  { id: 'tech', name: '技术部', color: '#22d3ee' },
-  { id: 'design', name: '设计部', color: '#a78bfa' },
-  { id: 'product', name: '产品部', color: '#34d399' },
-  { id: 'ops', name: '运营部', color: '#fb923c' },
-  { id: 'qa', name: '测试部', color: '#f472b6' }
+  { id: 'tech', name: '技术部', color: '#22d3ee', icon: '💻' },
+  { id: 'design', name: '设计部', color: '#a78bfa', icon: '🎨' },
+  { id: 'product', name: '产品部', color: '#34d399', icon: '📦' },
+  { id: 'ops', name: '运营部', color: '#fb923c', icon: '📈' },
+  { id: 'qa', name: '测试部', color: '#f472b6', icon: '🧪' }
 ];
 
 const DAILY_MEMBERS = [
@@ -4276,11 +4155,14 @@ const DAILY_MEMBERS = [
 let dailyReports = [];
 let dailyEditingId = null;
 let dailyDetailId = null;
+let dailyCurrentTab = 'workbench';  // workbench | mine | list | calendar | stats | roster | tasks
 let dailySearchQuery = '';
 let dailyViewMode = 'all';     // all | dept | member
 let dailyCalendarDate = new Date();
-let wbTab = 'mine';            // mine | system | created | following
-let dailyCurrentTab = 'workbench'; // workbench | mine | list | calendar | stats | roster | tasks
+let dailyMinePage = 0;          // 0-indexed page for 我的日报 pagination
+let dailyViewingUser = null;    // null = current user; otherwise viewing someone else's reports
+let dailyHomeTab = 'daily';     // daily | highlights | message | profile (我的主页子标签)
+let wbTab = 'mine';            // mine | system | created | following | completed
 
 // --- Daily Report Helpers ---
 function getCurrentUser() {
@@ -4301,14 +4183,8 @@ function switchModule(module) {
   document.querySelectorAll('.module-nav-item').forEach(item => {
     item.classList.toggle('active', item.dataset.module === module);
   });
-  const settingsPage = document.getElementById('settingsPage');
   const dailyPage = document.getElementById('dailyPage');
-  if (module === 'settings') {
-    if (settingsPage) settingsPage.classList.remove('hidden');
-    if (dailyPage) dailyPage.classList.add('hidden');
-    renderSettingsPage('general');
-  } else if (module === 'daily') {
-    if (settingsPage) settingsPage.classList.add('hidden');
+  if (module === 'daily') {
     if (dailyPage) {
       dailyPage.classList.remove('hidden');
       loadTsData();
@@ -4391,8 +4267,46 @@ function todayStr() {
 function switchDailyTab(tab) {
   dailyCurrentTab = tab;
   dailyDetailId = null;
+  dailyMinePage = 0;
+  dailyViewingUser = null;
+  dailyHomeTab = 'daily';
   document.querySelectorAll('.daily-nav-item').forEach(item => {
     item.classList.toggle('active', item.dataset.dailyTab === tab);
+  });
+  renderDailySidebar();
+  renderDailyContent();
+}
+
+function setDailyMinePage(page) {
+  dailyMinePage = page;
+  renderDailyContent();
+}
+
+function setDailyHomeTab(tab) {
+  dailyHomeTab = tab;
+  renderDailyContent();
+}
+
+function openUserProfile(userName) {
+  dailyViewingUser = userName;
+  dailyMinePage = 0;
+  dailyDetailId = null;
+  dailyHomeTab = 'daily';
+  dailyCurrentTab = 'mine';
+  document.querySelectorAll('.daily-nav-item').forEach(item => {
+    item.classList.toggle('active', item.dataset.dailyTab === 'mine');
+  });
+  renderDailySidebar();
+  renderDailyContent();
+}
+
+function closeUserProfile() {
+  dailyViewingUser = null;
+  dailyMinePage = 0;
+  dailyHomeTab = 'daily';
+  dailyCurrentTab = 'roster';
+  document.querySelectorAll('.daily-nav-item').forEach(item => {
+    item.classList.toggle('active', item.dataset.dailyTab === 'roster');
   });
   renderDailySidebar();
   renderDailyContent();
@@ -4463,18 +4377,21 @@ function renderWorkbench() {
     system: () => tsTasks.filter(t => t.createdBy !== TS_CURRENT_USER.id && t.assigneeIds.includes(TS_CURRENT_USER.id) && t.status !== 'done'),
     created: () => tsTasks.filter(t => t.createdBy === TS_CURRENT_USER.id),
     following: () => tsTasks.filter(t => t.followerIds.includes(TS_CURRENT_USER.id) && t.status !== 'done'),
+    completed: () => tsTasks.filter(t => t.assigneeIds.includes(TS_CURRENT_USER.id) && t.status === 'done'),
   };
   const wbCounts = {
     mine: wbFilters.mine().length,
     system: wbFilters.system().length,
     created: wbFilters.created().length,
     following: wbFilters.following().length,
+    completed: wbFilters.completed().length,
   };
   const wbTabLabels = [
     { key: 'mine', label: '我的任务' },
     { key: 'system', label: '系统任务' },
     { key: 'created', label: '我创建的' },
     { key: 'following', label: '我关注的' },
+    { key: 'completed', label: '我完成的' },
   ];
 
   let html = `
@@ -4495,11 +4412,9 @@ function renderWorkbench() {
     </div>
   `;
 
-  // --- Task list for current tab ---
-  const wbTasks = wbFilters[wbTab] ? wbFilters[wbTab]() : [];
-  // Sort: priority then due date
+  // --- Sort helper ---
   const priOrder = { high: 0, medium: 1, low: 2, none: 3 };
-  wbTasks.sort((a, b) => {
+  const sortTasks = (arr) => arr.slice().sort((a, b) => {
     if (priOrder[a.priority] !== priOrder[b.priority]) return priOrder[a.priority] - priOrder[b.priority];
     if (a.dueDate && b.dueDate) return a.dueDate.localeCompare(b.dueDate);
     if (a.dueDate) return -1;
@@ -4507,41 +4422,135 @@ function renderWorkbench() {
     return 0;
   });
 
-  if (wbTasks.length === 0) {
-    html += `<div class="wb-empty">暂无任务</div>`;
-  } else {
-    html += `<div class="wb-task-list">`;
-    wbTasks.forEach(t => {
-      const isDone = t.status === 'done';
-      const assigneeHtml = (t.assigneeIds || []).slice(0, 3).map(id => {
-        const m = getTsMember(id);
-        const c = m.color || '#888';
-        return `<div class="wb-task-avatar" style="background:${c}22;color:${c};">${escapeHtml(m.name.charAt(0))}</div>`;
-      }).join('');
-      let dueHtml = '';
-      if (t.dueDate) {
-        const isOverdue = !isDone && t.dueDate < todayStr;
-        dueHtml = `<span class="wb-task-due ${isOverdue ? 'overdue' : ''}">📅 ${t.dueDate}</span>`;
-      }
-      const listName = getTsListName(t.listId);
+  // --- Render a single task row ---
+  const renderTaskRow = (t) => {
+    const isDone = t.status === 'done';
+    const assigneeHtml = (t.assigneeIds || []).slice(0, 3).map(id => {
+      const m = getTsMember(id);
+      const c = m.color || '#888';
+      return `<div class="wb-task-avatar" style="background:${c}22;color:${c};">${escapeHtml(m.name.charAt(0))}</div>`;
+    }).join('');
+    let dueHtml = '';
+    if (t.dueDate) {
+      const isOverdue = !isDone && t.dueDate < todayStr;
+      dueHtml = `<span class="wb-task-due ${isOverdue ? 'overdue' : ''}">📅 ${t.dueDate}</span>`;
+    }
+    const listName = getTsListName(t.listId);
+    return `
+      <div class="wb-task-row" onclick="openTsTaskModal('${t.id}')">
+        <div class="wb-task-check ${isDone ? 'done' : ''}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="wb-task-priority ${t.priority || 'none'}"></div>
+        <div class="wb-task-info">
+          <div class="wb-task-title ${isDone ? 'done' : ''}">${escapeHtml(t.title)}</div>
+          <div class="wb-task-meta">
+            ${dueHtml}
+            ${listName ? `<span>📁 ${escapeHtml(listName)}</span>` : ''}
+          </div>
+        </div>
+        <div class="wb-task-assignees">${assigneeHtml}</div>
+      </div>
+    `;
+  };
+
+  if (wbTab === 'mine') {
+    // 1. 未完成的系统任务（他人创建、分配给我、未完成）
+    const systemTasks = sortTasks(wbFilters.system());
+    // 2. 未填写的日报（今日未提交 + 最近缺失工作日）
+    const myReportDates = new Set(myReports.filter(r => r.status === 'submitted').map(r => r.date));
+    const recentMissing = [];
+    const checkStart = new Date(today);
+    checkStart.setDate(today.getDate() - 6);
+    for (let d = new Date(checkStart); d <= today; d.setDate(d.getDate() + 1)) {
+      const dow = d.getDay();
+      if (dow === 0 || dow === 6) continue;
+      const ds = d.toISOString().slice(0, 10);
+      if (!myReportDates.has(ds)) recentMissing.push(ds);
+    }
+    const todayReportSubmitted = myReportDates.has(todayStr);
+    const unfilledReports = [];
+    if (!todayReportSubmitted) unfilledReports.push({ date: todayStr, label: '今日日报' });
+    recentMissing.filter(d => d !== todayStr).forEach(d => unfilledReports.push({ date: d, label: d + ' 日报' }));
+
+    // 3. 任务清单中负责人为我且未完成的任务（自己创建、分配给自己、未完成）
+    const myListTasks = sortTasks(tsTasks.filter(t =>
+      t.assigneeIds.includes(TS_CURRENT_USER.id) && t.status !== 'done' && t.createdBy === TS_CURRENT_USER.id
+    ));
+
+    let sectionCount = 0;
+
+    // Section 1: 系统任务
+    if (systemTasks.length > 0) {
+      sectionCount++;
       html += `
-        <div class="wb-task-row" onclick="openTsTaskModal('${t.id}')">
-          <div class="wb-task-check ${isDone ? 'done' : ''}">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div class="wb-task-priority ${t.priority || 'none'}"></div>
-          <div class="wb-task-info">
-            <div class="wb-task-title ${isDone ? 'done' : ''}">${escapeHtml(t.title)}</div>
-            <div class="wb-task-meta">
-              ${dueHtml}
-              ${listName ? `<span>📁 ${escapeHtml(listName)}</span>` : ''}
-            </div>
-          </div>
-          <div class="wb-task-assignees">${assigneeHtml}</div>
+        <div class="wb-section">
+          <div class="wb-section-title"><span class="wb-section-dot" style="background:var(--warning)"></span>未完成的系统任务 <span class="wb-section-count">${systemTasks.length}</span></div>
+          <div class="wb-task-list">${systemTasks.map(renderTaskRow).join('')}</div>
         </div>
       `;
-    });
-    html += `</div>`;
+    }
+
+    // Section 2: 未填写的日报
+    if (unfilledReports.length > 0) {
+      sectionCount++;
+      html += `
+        <div class="wb-section">
+          <div class="wb-section-title"><span class="wb-section-dot" style="background:var(--accent)"></span>未填写的日报 <span class="wb-section-count">${unfilledReports.length}</span></div>
+          <div class="daily-report-list">
+            ${unfilledReports.map(r => {
+              const dt = formatDate(r.date);
+              const editable = isEditable(r.date);
+              return `
+                <div class="daily-report-card is-missing${editable ? '' : ' is-expired'}"${editable ? ` onclick="openDailyEditorForDate('${r.date}')"` : ''}>
+                  <div class="daily-report-date-block">
+                    <div class="daily-report-date-day">${dt.day}</div>
+                    <div class="daily-report-date-month">${dt.month}</div>
+                    <div class="daily-report-date-weekday">${dt.weekday}</div>
+                  </div>
+                  <div class="daily-report-missing-body">
+                    <div class="daily-report-missing-title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                      ${r.date === todayStr ? '今日日报未填写' : dt.full + ' 未填写'}
+                    </div>
+                    <div class="daily-report-missing-desc">${editable ? '该工作日未提交日报，点击补充填写' : '已超过补写期限（超过3天）'}</div>
+                  </div>
+                  ${editable ? `<div class="daily-report-actions" onclick="event.stopPropagation()">
+                    <button onclick="openDailyEditorForDate('${r.date}')" title="补写日报">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                      补写
+                    </button>
+                  </div>` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // Section 3: 我的任务清单
+    if (myListTasks.length > 0) {
+      sectionCount++;
+      html += `
+        <div class="wb-section">
+          <div class="wb-section-title"><span class="wb-section-dot" style="background:var(--success)"></span>我的任务清单 <span class="wb-section-count">${myListTasks.length}</span></div>
+          <div class="wb-task-list">${myListTasks.map(renderTaskRow).join('')}</div>
+        </div>
+      `;
+    }
+
+    if (sectionCount === 0) {
+      html += `<div class="wb-empty">暂无任务</div>`;
+    }
+  } else {
+    // --- Other tabs: single flat list ---
+    const wbTasks = sortTasks(wbFilters[wbTab] ? wbFilters[wbTab]() : []);
+    if (wbTasks.length === 0) {
+      html += `<div class="wb-empty">暂无任务</div>`;
+    } else {
+      html += `<div class="wb-task-list">${wbTasks.map(renderTaskRow).join('')}</div>`;
+    }
   }
 
   html += `<div style="display:flex; flex-direction:column; gap:16px; margin-top:24px;">`;
@@ -6818,8 +6827,9 @@ function renderRoster() {
 }
 
 function renderDailyMine() {
-  const currentUser = getCurrentUser();
-  let myReports = dailyReports.filter(r => r.author === currentUser);
+  const viewingAs = dailyViewingUser || getCurrentUser();
+  const isSelf = dailyViewingUser === null;
+  let myReports = dailyReports.filter(r => r.author === viewingAs);
   const mineBadge = document.getElementById('dailyMineBadge');
   if (mineBadge) mineBadge.textContent = myReports.length;
   const allBadge = document.getElementById('dailyCountBadge');
@@ -6880,18 +6890,34 @@ function renderDailyMine() {
   let html = `
     <div class="daily-toolbar">
       <div class="daily-toolbar-left">
-        <span class="daily-toolbar-title">日报</span>
-        <div class="daily-search-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" placeholder="搜索日报..." value="${dailySearchQuery}" oninput="dailySearchQuery=this.value; renderDailyContent();" />
+        ${!isSelf ? `<button class="daily-back-btn" onclick="closeUserProfile()" title="返回员工名册"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button>` : ''}
+        <span class="daily-toolbar-title">${isSelf ? '我的主页' : escapeHtml(viewingAs) + ' 的主页'}</span>
+      </div>
+      <div class="daily-toolbar-right">
+        <div class="home-toggle-group">
+          <button class="home-toggle-btn ${dailyHomeTab === 'daily' ? 'active' : ''}" onclick="setDailyHomeTab('daily')">日报</button>
+          <button class="home-toggle-btn ${dailyHomeTab === 'highlights' ? 'active' : ''}" onclick="setDailyHomeTab('highlights')">高光</button>
+          <button class="home-toggle-btn ${dailyHomeTab === 'message' ? 'active' : ''}" onclick="setDailyHomeTab('message')">寄语</button>
+          <button class="home-toggle-btn ${dailyHomeTab === 'profile' ? 'active' : ''}" onclick="setDailyHomeTab('profile')">个人资料</button>
         </div>
       </div>
-      <button class="btn btn-primary" onclick="openDailyEditor()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        写日报
-      </button>
     </div>
   `;
+
+  // --- Branch content by home sub-tab ---
+  if (dailyHomeTab === 'highlights') {
+    html += renderHomeHighlights(myReports, viewingAs, isSelf);
+    return html;
+  }
+  if (dailyHomeTab === 'message') {
+    html += renderHomeMessage(myReports, viewingAs, isSelf);
+    return html;
+  }
+  if (dailyHomeTab === 'profile') {
+    html += renderHomeProfile(viewingAs, isSelf);
+    return html;
+  }
+  // default: daily tab — existing daily report content
 
   html += `
     <div class="daily-stats" style="grid-template-columns: repeat(4, 1fr);">
@@ -6918,47 +6944,52 @@ function renderDailyMine() {
     </div>
   `;
 
-  if (todayReport) {
-    html += `
-      <div style="background:var(--accent-soft); border:1px solid var(--accent); border-radius:var(--radius-md); padding:16px 20px; margin-bottom:24px; display:flex; align-items:center; justify-content:space-between;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:40px; height:40px; border-radius:10px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:20px;">✅</div>
-          <div>
-            <div style="font-size:14px; font-weight:600; color:var(--accent);">今日日报已填写</div>
-            <div style="font-size:12px; color:var(--text-tertiary); margin-top:2px;">${todayReport.tasks.length}个任务 · ${todayReport.status === 'draft' ? '草稿状态，尚未提交' : '已提交'}</div>
+  if (isSelf) {
+    if (todayReport) {
+      html += `
+        <div style="background:var(--accent-soft); border:1px solid var(--accent); border-radius:var(--radius-md); padding:16px 20px; margin-bottom:24px; display:flex; align-items:center; justify-content:space-between;">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:40px; height:40px; border-radius:10px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:20px;">✅</div>
+            <div>
+              <div style="font-size:14px; font-weight:600; color:var(--accent);">今日日报已填写</div>
+              <div style="font-size:12px; color:var(--text-tertiary); margin-top:2px;">${todayReport.tasks.length}个任务 · ${todayReport.status === 'draft' ? '草稿状态，尚未提交' : '已提交'}</div>
+            </div>
           </div>
+          <button class="btn btn-secondary" onclick="editDailyReport('${todayReport.id}')">继续编辑</button>
         </div>
-        <button class="btn btn-secondary" onclick="editDailyReport('${todayReport.id}')">继续编辑</button>
-      </div>
-    `;
-  } else {
-    html += `
-      <div style="background:var(--bg-secondary); border:1px dashed var(--border-light); border-radius:var(--radius-md); padding:16px 20px; margin-bottom:24px; display:flex; align-items:center; justify-content:space-between;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:40px; height:40px; border-radius:10px; background:var(--bg-elevated); display:flex; align-items:center; justify-content:center; font-size:20px;">📋</div>
-          <div>
-            <div style="font-size:14px; font-weight:600; color:var(--text-primary);">今日尚未填写日报</div>
-            <div style="font-size:12px; color:var(--text-tertiary); margin-top:2px;">点击右侧按钮开始填写今天的工作</div>
+      `;
+    } else {
+      html += `
+        <div style="background:var(--bg-secondary); border:1px dashed var(--border-light); border-radius:var(--radius-md); padding:16px 20px; margin-bottom:24px; display:flex; align-items:center; justify-content:space-between;">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:40px; height:40px; border-radius:10px; background:var(--bg-elevated); display:flex; align-items:center; justify-content:center; font-size:20px;">📋</div>
+            <div>
+              <div style="font-size:14px; font-weight:600; color:var(--text-primary);">今日尚未填写日报</div>
+              <div style="font-size:12px; color:var(--text-tertiary); margin-top:2px;">点击右侧按钮开始填写今天的工作</div>
+            </div>
           </div>
+          <button class="btn btn-primary" onclick="openDailyEditor()">写今日日报</button>
         </div>
-        <button class="btn btn-primary" onclick="openDailyEditor()">写今日日报</button>
-      </div>
-    `;
+      `;
+    }
   }
 
   if (combinedList.length === 0) {
     html += `
       <div class="daily-empty">
         <div class="daily-empty-icon">📋</div>
-        <div class="daily-empty-text">${dailySearchQuery ? '没有找到匹配的日报' : '你还没有写过日报'}</div>
-        ${!dailySearchQuery ? '<button class="btn btn-primary" onclick="openDailyEditor()">写第一篇日报</button>' : ''}
+        <div class="daily-empty-text">${dailySearchQuery ? '没有找到匹配的日报' : (isSelf ? '你还没有写过日报' : escapeHtml(viewingAs) + ' 还没有写过日报')}</div>
+        ${isSelf && !dailySearchQuery ? '<button class="btn btn-primary" onclick="openDailyEditor()">写第一篇日报</button>' : ''}
       </div>
     `;
     return html;
   }
 
-  html += '<div class="daily-report-list">';
-  let prevWeekKey = null;
+  // --- Group combinedList by week (Monday-based), sorted desc ---
+  const WEEK_PER_PAGE = 4;
+  const weekGroups = [];
+  let currentWeekKey = null;
+  let currentWeekItems = [];
   combinedList.forEach(item => {
     const itemDate = new Date(item.date + 'T00:00:00');
     const monday = new Date(itemDate);
@@ -6966,45 +6997,285 @@ function renderDailyMine() {
     const diff = dow === 0 ? 6 : dow - 1;
     monday.setDate(itemDate.getDate() - diff);
     const weekKey = `${monday.getFullYear()}-${monday.getMonth()+1}-${monday.getDate()}`;
-    if (prevWeekKey !== null && weekKey !== prevWeekKey) {
-      const monDt = formatDate(`${monday.getFullYear()}-${String(monday.getMonth()+1).padStart(2,'0')}-${String(monday.getDate()).padStart(2,'0')}`);
-      const sun = new Date(monday);
-      sun.setDate(sun.getDate() + 6);
-      const sunDt = formatDate(`${sun.getFullYear()}-${String(sun.getMonth()+1).padStart(2,'0')}-${String(sun.getDate()).padStart(2,'0')}`);
+    if (weekKey !== currentWeekKey) {
+      if (currentWeekKey !== null) weekGroups.push({ key: currentWeekKey, items: currentWeekItems });
+      currentWeekKey = weekKey;
+      currentWeekItems = [];
+    }
+    currentWeekItems.push(item);
+  });
+  if (currentWeekKey !== null) weekGroups.push({ key: currentWeekKey, items: currentWeekItems });
+
+  const totalPages = Math.max(1, Math.ceil(weekGroups.length / WEEK_PER_PAGE));
+  if (dailyMinePage >= totalPages) dailyMinePage = totalPages - 1;
+  if (dailyMinePage < 0) dailyMinePage = 0;
+  const startWeek = dailyMinePage * WEEK_PER_PAGE;
+  const pageWeekGroups = weekGroups.slice(startWeek, startWeek + WEEK_PER_PAGE);
+
+  html += '<div class="daily-report-list">';
+  let prevWeekKey = null;
+  pageWeekGroups.forEach(group => {
+    // Week divider
+    const [y, m, d] = group.key.split('-').map(Number);
+    const monday = new Date(y, m - 1, d);
+    const monDt = formatDate(`${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`);
+    const sun = new Date(monday);
+    sun.setDate(sun.getDate() + 6);
+    const sunDt = formatDate(`${sun.getFullYear()}-${String(sun.getMonth()+1).padStart(2,'0')}-${String(sun.getDate()).padStart(2,'0')}`);
+    if (prevWeekKey !== null) {
       html += `<div class="daily-report-week-divider"><span class="daily-report-week-divider-label">${monDt.month}${monDt.day}日 - ${sunDt.month}${sunDt.day}日</span></div>`;
     }
-    prevWeekKey = weekKey;
+    prevWeekKey = group.key;
 
-    if (item.type === 'missing') {
-      const dt = formatDate(item.date);
-      const editable = isEditable(item.date);
-      html += `
-        <div class="daily-report-card is-missing${editable ? '' : ' is-expired'}"${editable ? ` onclick="openDailyEditorForDate('${item.date}')"` : ''}>
-          <div class="daily-report-date-block">
-            <div class="daily-report-date-day">${dt.day}</div>
-            <div class="daily-report-date-month">${dt.month}</div>
-            <div class="daily-report-date-weekday">${dt.weekday}</div>
-          </div>
-          <div class="daily-report-missing-body">
-            <div class="daily-report-missing-title">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              未填写日报
+    group.items.forEach(item => {
+      if (item.type === 'missing') {
+        const dt = formatDate(item.date);
+        const editable = isSelf && isEditable(item.date);
+        const clickable = editable;
+        html += `
+          <div class="daily-report-card is-missing${editable ? '' : ' is-expired'}"${clickable ? ` onclick="openDailyEditorForDate('${item.date}')"` : ''}>
+            <div class="daily-report-date-block">
+              <div class="daily-report-date-day">${dt.day}</div>
+              <div class="daily-report-date-month">${dt.month}</div>
+              <div class="daily-report-date-weekday">${dt.weekday}</div>
             </div>
-            <div class="daily-report-missing-desc">${editable ? '该工作日未提交日报，点击补充填写' : '已超过补写期限（超过3天）'}</div>
+            <div class="daily-report-missing-body">
+              <div class="daily-report-missing-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                未填写日报
+              </div>
+              <div class="daily-report-missing-desc">${editable ? '该工作日未提交日报，点击补充填写' : (isSelf ? '已超过补写期限（超过3天）' : '该工作日未提交日报')}</div>
+            </div>
+            ${editable ? `<div class="daily-report-actions" onclick="event.stopPropagation()">
+              <button onclick="openDailyEditorForDate('${item.date}')" title="补写日报">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                补写
+              </button>
+            </div>` : ''}
           </div>
-          ${editable ? `<div class="daily-report-actions" onclick="event.stopPropagation()">
-            <button onclick="openDailyEditorForDate('${item.date}')" title="补写日报">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              补写
-            </button>
-          </div>` : ''}
-        </div>
-      `;
-    } else {
-      html += renderDailyReportCards([item.data], null);
-    }
+        `;
+      } else {
+        html += renderDailyReportCards([item.data], null);
+      }
+    });
   });
   html += '</div>';
+
+  // --- Pagination controls ---
+  if (totalPages > 1) {
+    const firstWeek = pageWeekGroups[0];
+    const lastWeek = pageWeekGroups[pageWeekGroups.length - 1];
+    const [fy, fm, fd] = firstWeek.key.split('-').map(Number);
+    const fMon = new Date(fy, fm - 1, fd);
+    const fSun = new Date(fMon); fSun.setDate(fSun.getDate() + 6);
+    const [ly, lm, ld] = lastWeek.key.split('-').map(Number);
+    const lMon = new Date(ly, lm - 1, ld);
+    const lSun = new Date(lMon); lSun.setDate(lSun.getDate() + 6);
+    const fmt = (dt) => `${dt.getMonth()+1}月${dt.getDate()}日`;
+    html += `
+      <div class="daily-pagination">
+        <button class="daily-page-btn" ${dailyMinePage === 0 ? 'disabled' : ''} onclick="setDailyMinePage(${dailyMinePage - 1})">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          上一页
+        </button>
+        <span class="daily-page-info">第 ${dailyMinePage + 1} / ${totalPages} 页 · ${fmt(fMon)} - ${fmt(lSun)}</span>
+        <button class="daily-page-btn" ${dailyMinePage >= totalPages - 1 ? 'disabled' : ''} onclick="setDailyMinePage(${dailyMinePage + 1})">
+          下一页
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    `;
+  }
+
+  return html;
+}
+
+// --- 我的主页：高光 tab ---
+function renderHomeHighlights(myReports, viewingAs, isSelf) {
+  const submitted = myReports.filter(r => r.status === 'submitted');
+  const topReports = [...submitted].sort((a, b) => (b.score || 85) - (a.score || 85)).slice(0, 5);
+
+  let html = '<div class="home-highlights">';
+
+  if (topReports.length === 0) {
+    html += `
+      <div class="daily-empty">
+        <div class="daily-empty-icon">🌟</div>
+        <div class="daily-empty-text">${isSelf ? '暂无高光时刻，提交更多日报来记录你的成就吧' : escapeHtml(viewingAs) + ' 暂无高光记录'}</div>
+      </div>
+    `;
+    return html + '</div>';
+  }
+
+  const totalTasks = myReports.flatMap(r => r.tasks).length;
+  const doneTasks = myReports.flatMap(r => r.tasks).filter(t => parseInt(t.progress) >= 100).length;
+  const bestScore = topReports.length > 0 ? Math.max(...topReports.map(r => r.score || 85)) : 0;
+
+  html += `
+    <div class="home-highlight-stats">
+      <div class="home-highlight-stat">
+        <div class="home-highlight-stat-value" style="color:var(--success);">${doneTasks}</div>
+        <div class="home-highlight-stat-label">已完成任务</div>
+      </div>
+      <div class="home-highlight-stat">
+        <div class="home-highlight-stat-value" style="color:var(--accent);">${topReports.length}</div>
+        <div class="home-highlight-stat-label">高光日报</div>
+      </div>
+      <div class="home-highlight-stat">
+        <div class="home-highlight-stat-value" style="color:var(--purple);">${bestScore}</div>
+        <div class="home-highlight-stat-label">最高评分</div>
+      </div>
+      <div class="home-highlight-stat">
+        <div class="home-highlight-stat-value" style="color:var(--warning);">${totalTasks}</div>
+        <div class="home-highlight-stat-label">累计任务</div>
+      </div>
+    </div>
+    <div class="home-section-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      高光日报
+    </div>
+  `;
+
+  topReports.forEach(r => {
+    const dt = formatDate(r.date);
+    const doneTasks = r.tasks.filter(t => parseInt(t.progress) >= 100).length;
+    html += `
+      <div class="home-highlight-card" onclick="openDailyDetail('${r.id}')">
+        <div class="home-highlight-card-header">
+          <div class="home-highlight-date">
+            <span class="home-highlight-day">${dt.day}</span>
+            <span class="home-highlight-month">${dt.month}</span>
+          </div>
+          <div class="home-highlight-card-title">
+            <div style="font-size:14px; font-weight:600; color:var(--text-primary);">${dt.full} ${dt.weekday}</div>
+            <div style="font-size:12px; color:var(--text-tertiary); margin-top:2px;">${r.tasks.length}个任务 · ${doneTasks}个已完成</div>
+          </div>
+          <div class="home-highlight-score" style="${(r.score || 85) >= 90 ? 'color:var(--success);' : (r.score || 85) >= 80 ? 'color:var(--warning);' : 'color:var(--text-tertiary);'}">${r.score || 85}<span style="font-size:11px;">分</span></div>
+        </div>
+        ${r.tasks.filter(t => parseInt(t.progress) >= 100).length > 0 ? `
+          <div class="home-highlight-tasks">
+            ${r.tasks.filter(t => parseInt(t.progress) >= 100).slice(0, 3).map(t => `<span class="home-highlight-task-tag">✅ ${escapeHtml(t.name)}</span>`).join('')}
+          </div>
+        ` : ''}
+        ${r.notes && r.notes.trim() ? `<div class="home-highlight-note">"${escapeHtml(r.notes.slice(0, 80))}${r.notes.length > 80 ? '...' : ''}"</div>` : ''}
+      </div>
+    `;
+  });
+
+  html += '</div>';
+  return html;
+}
+
+// --- 我的主页：寄语 tab ---
+function renderHomeMessage(myReports, viewingAs, isSelf) {
+  const notesList = myReports
+    .filter(r => r.notes && r.notes.trim())
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  let html = '<div class="home-message">';
+
+  if (notesList.length === 0) {
+    html += `
+      <div class="daily-empty">
+        <div class="daily-empty-icon">💌</div>
+        <div class="daily-empty-text">${isSelf ? '还没有留下寄语，在日报的"个人心得"中记录你的思考吧' : escapeHtml(viewingAs) + ' 暂无寄语'}</div>
+      </div>
+    `;
+    return html + '</div>';
+  }
+
+  html += `
+    <div class="home-section-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      心得寄语 <span style="font-size:12px; color:var(--text-tertiary); font-weight:400;">共 ${notesList.length} 条</span>
+    </div>
+    <div class="home-message-timeline">
+  `;
+
+  notesList.forEach((r, idx) => {
+    const dt = formatDate(r.date);
+    html += `
+      <div class="home-message-item" onclick="openDailyDetail('${r.id}')">
+        <div class="home-message-dot"></div>
+        <div class="home-message-content">
+          <div class="home-message-date">${dt.full} ${dt.weekday}</div>
+          <div class="home-message-text">${escapeHtml(r.notes)}</div>
+        </div>
+      </div>
+    `;
+  });
+
+  html += '</div></div>';
+  return html;
+}
+
+// --- 我的主页：个人资料 tab ---
+function renderHomeProfile(viewingAs, isSelf) {
+  const member = DAILY_MEMBERS.find(m => m.name === viewingAs);
+  const myReports = dailyReports.filter(r => r.author === viewingAs);
+  const submitted = myReports.filter(r => r.status === 'submitted').length;
+  const totalTasks = myReports.flatMap(r => r.tasks).length;
+  const totalPersonDays = myReports.flatMap(r => r.tasks).reduce((s, t) => s + getTaskPersonDays(t), 0);
+
+  const deptName = member ? getDeptName(member.dept) : '未知';
+  const deptColor = member ? getDeptColor(member.dept) : '#94a3b8';
+  const roleLabel = member ? (member.role === 'lead' ? '负责人' : member.role === 'me' ? '本人' : '组员') : '组员';
+  const title = member ? member.title : '未知职位';
+
+  let html = `
+    <div class="home-profile">
+      <div class="home-profile-card">
+        <div class="home-profile-avatar" style="background:${deptColor};">${escapeHtml(viewingAs.charAt(0))}</div>
+        <div class="home-profile-info">
+          <div class="home-profile-name">${escapeHtml(viewingAs)}</div>
+          <div class="home-profile-title">${escapeHtml(title)}</div>
+          <div class="home-profile-tags">
+            <span class="home-profile-tag" style="color:${deptColor}; border-color:${deptColor}40;">${getDeptIcon(member ? member.dept : '')} ${deptName}</span>
+            <span class="home-profile-tag">${roleLabel}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-profile-stats">
+        <div class="home-profile-stat">
+          <div class="home-profile-stat-value">${myReports.length}</div>
+          <div class="home-profile-stat-label">日报总数</div>
+        </div>
+        <div class="home-profile-stat">
+          <div class="home-profile-stat-value">${submitted}</div>
+          <div class="home-profile-stat-label">已提交</div>
+        </div>
+        <div class="home-profile-stat">
+          <div class="home-profile-stat-value">${totalTasks}</div>
+          <div class="home-profile-stat-label">累计任务</div>
+        </div>
+        <div class="home-profile-stat">
+          <div class="home-profile-stat-value">${totalPersonDays.toFixed(1)}</div>
+          <div class="home-profile-stat-label">总人天</div>
+        </div>
+      </div>
+
+      <div class="home-profile-detail">
+        <div class="home-profile-detail-row">
+          <div class="home-profile-detail-label">所属部门</div>
+          <div class="home-profile-detail-value">${deptName}</div>
+        </div>
+        <div class="home-profile-detail-row">
+          <div class="home-profile-detail-label">职位</div>
+          <div class="home-profile-detail-value">${escapeHtml(title)}</div>
+        </div>
+        <div class="home-profile-detail-row">
+          <div class="home-profile-detail-label">角色</div>
+          <div class="home-profile-detail-value">${roleLabel}</div>
+        </div>
+        <div class="home-profile-detail-row">
+          <div class="home-profile-detail-label">日报提交率</div>
+          <div class="home-profile-detail-value">${myReports.length > 0 ? Math.round((submitted / myReports.length) * 100) : 0}%</div>
+        </div>
+      </div>
+    </div>
+  `;
+
   return html;
 }
 
@@ -7041,15 +7312,7 @@ function renderDailyList() {
             按下属
           </button>
         </div>
-        <div class="daily-search-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" placeholder="搜索日报..." value="${dailySearchQuery}" oninput="dailySearchQuery=this.value; renderDailyContent();" />
-        </div>
       </div>
-      <button class="btn btn-primary" onclick="openDailyEditor()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        写日报
-      </button>
     </div>
   `;
 
@@ -7176,7 +7439,7 @@ function renderDailyReportCards(reports, currentUser) {
           </div>
         </div>
         <div class="daily-report-actions" onclick="event.stopPropagation()">
-          ${isEditable(r.date) ? `<button onclick="editDailyReport('${r.id}')" title="编辑">
+          ${dailyViewingUser === null && isEditable(r.date) ? `<button onclick="editDailyReport('${r.id}')" title="编辑">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
           </button>` : ''}
         </div>
@@ -7220,10 +7483,6 @@ function renderDailyCalendar() {
       <div class="daily-toolbar-left">
         <span class="daily-toolbar-title">日历视图</span>
       </div>
-      <button class="btn btn-primary" onclick="openDailyEditor()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        写日报
-      </button>
     </div>
     <div class="daily-calendar">
       <div class="daily-calendar-header">
@@ -7303,10 +7562,6 @@ function renderDailyStats() {
       <div class="daily-toolbar-left">
         <span class="daily-toolbar-title">统计分析</span>
       </div>
-      <button class="btn btn-primary" onclick="openDailyEditor()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        写日报
-      </button>
     </div>
     <div class="daily-stats">
       <div class="daily-stat-card">
@@ -7394,7 +7649,7 @@ function renderDailyDetail() {
           <div class="daily-detail-sub">${dt.weekday} · ${escapeHtml(report.author)} · <span class="daily-report-status ${report.status}" style="display:inline-flex; align-items:center;">${report.status === 'draft' ? '草稿' : '已提交'}</span>${report.isSupplement && report.supplementDate ? (() => { const sd = formatDate(report.supplementDate); return ` · <span class="daily-report-status" style="background:rgba(167,139,250,0.12); color:var(--purple); display:inline-flex; align-items:center;">${sd.month}${sd.day}补写</span>`; })() : ''}</div>
         </div>
         <div style="display:flex; gap:8px;">
-          ${isEditable(report.date) ? `<button class="btn btn-secondary btn-icon" onclick="editDailyReport('${report.id}')" title="编辑">
+          ${dailyViewingUser === null && isEditable(report.date) ? `<button class="btn btn-secondary btn-icon" onclick="editDailyReport('${report.id}')" title="编辑">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
           </button>` : ''}
           <button class="btn btn-secondary btn-icon" onclick="dailyDetailId=null; renderDailyContent();" title="返回">
@@ -7455,6 +7710,26 @@ function renderDailyDetail() {
 function getMyDept() {
   const me = DAILY_MEMBERS.find(m => m.name === getCurrentUser());
   return me ? me.dept : 'tech';
+}
+
+const DEPT_MAP = {
+  tech:     { name: '技术部', color: '#3b82f6', icon: '💻' },
+  design:   { name: '设计部', color: '#a78bfa', icon: '🎨' },
+  product:  { name: '产品部', color: '#34d399', icon: '📦' },
+  qa:       { name: '测试部', color: '#f472b6', icon: '🧪' },
+  ops:      { name: '运营部', color: '#f87171', icon: '📈' }
+};
+
+function getDeptName(dept) {
+  return DEPT_MAP[dept]?.name || dept || '未分配';
+}
+
+function getDeptColor(dept) {
+  return DEPT_MAP[dept]?.color || '#94a3b8';
+}
+
+function getDeptIcon(dept) {
+  return DEPT_MAP[dept]?.icon || '📁';
 }
 
 function openDailyEditor() {
@@ -7727,7 +8002,7 @@ function deleteDailyReport(id) {
 }
 
 function confirmBeforeDeleteFlag() {
-  return getSetting('confirmBeforeDelete', true);
+  return true;
 }
 
 function openDailyDetail(id) {
@@ -7936,1389 +8211,8 @@ if (document.readyState === 'loading') {
   init();
 }
 
-// Save app state before page unload
-window.addEventListener('beforeunload', () => {
-  saveAppSettings();
-});
 
-// ============================================================
-// Settings Module
-// ============================================================
 
-const SETTINGS_STORAGE_KEY = 'resourceHub_appSettings';
-
-// Default settings - comprehensive defaults
-const DEFAULT_SETTINGS = {
-  // General
-  language: 'zh-CN',
-  startModule: 'daily',
-  autoSave: true,
-  autoSaveInterval: 30,
-  confirmBeforeDelete: true,
-  enableNotifications: true,
-  enableSound: false,
-  dateFormat: 'YYYY-MM-DD',
-  timeFormat: '24h',
-  recentlyOpenedLimit: 10,
-  clipboardMonitoring: true,
-
-  // Appearance
-  theme: 'dark',
-  accentColor: 'cyan',
-  sidebarWidth: 260,
-  detailPanelWidth: 320,
-  compactMode: false,
-  showFileExtensions: true,
-  showHiddenFiles: false,
-  thumbnailQuality: 'high',
-  animationSpeed: 'normal',
-  fontFamily: 'system',
-
-  // Workspace
-  defaultView: 'grid',
-  defaultGridSize: 'medium',
-  itemsPerPage: 50,
-  sortBy: 'name',
-  sortOrder: 'asc',
-  enableAutoRefresh: false,
-  autoRefreshInterval: 60,
-  showStatusBar: true,
-  rememberLastFolder: true,
-  showTagsInList: true,
-  enableDragDrop: true,
-  confirmCloseTab: true,
-  doubleClickToOpen: true,
-  accordionAttachment: true,
-
-  // Data & Storage
-  maxStorageMB: 100,
-  autoCleanup: false,
-  autoCleanupDays: 30,
-  enableVersioning: true,
-  maxVersions: 10,
-  compressExport: true,
-
-  // Shortcuts
-  enableShortcuts: true,
-
-  // About
-  version: '2.0.0',
-  checkUpdates: true
-};
-
-// Theme definitions
-const THEME_PRESETS = {
-  dark: {
-    '--bg-primary': '#0b0f17',
-    '--bg-secondary': '#111827',
-    '--bg-tertiary': '#1a2332',
-    '--bg-elevated': '#1e293b',
-    '--bg-hover': '#243044',
-    '--border-color': '#2a3a52',
-    '--border-light': '#334155',
-    '--text-primary': '#e8ecf4',
-    '--text-secondary': '#94a3b8',
-    '--text-tertiary': '#64748b'
-  },
-  light: {
-    '--bg-primary': '#f8fafc',
-    '--bg-secondary': '#f1f5f9',
-    '--bg-tertiary': '#e2e8f0',
-    '--bg-elevated': '#ffffff',
-    '--bg-hover': '#f1f5f9',
-    '--border-color': '#cbd5e1',
-    '--border-light': '#94a3b8',
-    '--text-primary': '#1e293b',
-    '--text-secondary': '#64748b',
-    '--text-tertiary': '#94a3b8'
-  },
-  midnight: {
-    '--bg-primary': '#0a0a0f',
-    '--bg-secondary': '#12121f',
-    '--bg-tertiary': '#1a1a2e',
-    '--bg-elevated': '#222238',
-    '--bg-hover': '#2a2a44',
-    '--border-color': '#2e2e4a',
-    '--border-light': '#3d3d5c',
-    '--text-primary': '#e0e0f0',
-    '--text-secondary': '#8888aa',
-    '--text-tertiary': '#5c5c7a'
-  },
-  forest: {
-    '--bg-primary': '#0d1a14',
-    '--bg-secondary': '#122820',
-    '--bg-tertiary': '#1a3528',
-    '--bg-elevated': '#1e3d30',
-    '--bg-hover': '#264a3a',
-    '--border-color': '#2a4a3c',
-    '--border-light': '#3a5a4c',
-    '--text-primary': '#dce8e0',
-    '--text-secondary': '#8aaa9a',
-    '--text-tertiary': '#6a8a7a'
-  }
-};
-
-// Accent color presets
-const ACCENT_COLORS = {
-  cyan: { color: '#22d3ee', hover: '#06b6d4', soft: 'rgba(34, 211, 238, 0.12)', glow: 'rgba(34, 211, 238, 0.3)' },
-  purple: { color: '#a78bfa', hover: '#8b5cf6', soft: 'rgba(167, 139, 250, 0.12)', glow: 'rgba(167, 139, 250, 0.3)' },
-  blue: { color: '#3b82f6', hover: '#2563eb', soft: 'rgba(59, 130, 246, 0.12)', glow: 'rgba(59, 130, 246, 0.3)' },
-  green: { color: '#34d399', hover: '#10b981', soft: 'rgba(52, 211, 153, 0.12)', glow: 'rgba(52, 211, 153, 0.3)' },
-  orange: { color: '#fb923c', hover: '#f97316', soft: 'rgba(251, 146, 60, 0.12)', glow: 'rgba(251, 146, 60, 0.3)' },
-  pink: { color: '#f472b6', hover: '#ec4899', soft: 'rgba(244, 114, 182, 0.12)', glow: 'rgba(244, 114, 182, 0.3)' },
-  red: { color: '#f87171', hover: '#ef4444', soft: 'rgba(248, 113, 113, 0.12)', glow: 'rgba(248, 113, 113, 0.3)' },
-  yellow: { color: '#fbbf24', hover: '#f59e0b', soft: 'rgba(251, 191, 36, 0.12)', glow: 'rgba(251, 191, 36, 0.3)' }
-};
-
-// Font family presets
-const FONT_FAMILIES = {
-  system: '-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
-  serif: '"Noto Serif SC", "Source Han Serif SC", Georgia, "Times New Roman", serif',
-  mono: '"JetBrains Mono", "Fira Code", "Cascadia Code", Consolas, monospace',
-  rounded: '"SF Pro Rounded", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif'
-};
-
-// Load settings from localStorage
-let appSettings = {};
-
-function loadAppSettings() {
-  try {
-    const stored = localStorage.getItem(SETTINGS_STORAGE_KEY);
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      appSettings = Object.assign({}, DEFAULT_SETTINGS, parsed);
-    } else {
-      appSettings = Object.assign({}, DEFAULT_SETTINGS);
-    }
-  } catch (e) {
-    console.error('Failed to load settings:', e);
-    appSettings = Object.assign({}, DEFAULT_SETTINGS);
-  }
-  applySettingsToUI();
-}
-
-// Save settings to localStorage
-function saveAppSettings() {
-  try {
-    localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(appSettings));
-  } catch (e) {
-    console.error('Failed to save settings:', e);
-  }
-}
-
-// Apply settings to the UI (theme, accent, fonts, etc.)
-function applySettingsToUI() {
-  const root = document.documentElement;
-
-  // Apply theme
-  const themeVars = THEME_PRESETS[appSettings.theme] || THEME_PRESETS.dark;
-  Object.entries(themeVars).forEach(([prop, val]) => {
-    root.style.setProperty(prop, val);
-  });
-
-  // Apply accent color
-  const accent = ACCENT_COLORS[appSettings.accentColor] || ACCENT_COLORS.cyan;
-  root.style.setProperty('--accent', accent.color);
-  root.style.setProperty('--accent-hover', accent.hover);
-  root.style.setProperty('--accent-soft', accent.soft);
-  root.style.setProperty('--accent-glow', accent.glow);
-
-  // Apply sidebar width
-  root.style.setProperty('--sidebar-width', appSettings.sidebarWidth + 'px');
-  root.style.setProperty('--detail-panel-width', appSettings.detailPanelWidth + 'px');
-
-  // Apply font family
-  root.style.setProperty('--app-font', FONT_FAMILIES[appSettings.fontFamily] || FONT_FAMILIES.system);
-  document.body.style.fontFamily = FONT_FAMILIES[appSettings.fontFamily] || FONT_FAMILIES.system;
-
-  // Apply compact mode
-  document.body.classList.toggle('compact-mode', appSettings.compactMode);
-
-  // Apply animation speed
-  const speeds = { fast: '100ms', normal: '180ms', slow: '300ms', none: '0ms' };
-  root.style.setProperty('--transition', (speeds[appSettings.animationSpeed] || '180ms') + ' cubic-bezier(0.4, 0, 0.2, 1)');
-}
-
-// Get a setting value with fallback
-function getSetting(key, fallback) {
-  return appSettings[key] !== undefined ? appSettings[key] : (fallback !== undefined ? fallback : DEFAULT_SETTINGS[key]);
-}
-
-// Set a setting value and persist
-function setSetting(key, value) {
-  appSettings[key] = value;
-  saveAppSettings();
-  applySettingsToUI();
-}
-
-// ============================================================
-// Settings Tab Switching
-// ============================================================
-
-function switchSettingsTab(tab) {
-  document.querySelectorAll('.settings-nav-item').forEach(item => {
-    item.classList.toggle('active', item.dataset.settingsTab === tab);
-  });
-  renderSettingsPage(tab);
-}
-
-// ============================================================
-// Settings Page Rendering
-// ============================================================
-
-function renderSettingsPage(tab) {
-  const content = document.getElementById('settingsContent');
-  if (!content) return;
-
-  switch (tab) {
-    case 'general': content.innerHTML = renderGeneralSettings(); break;
-    case 'appearance': content.innerHTML = renderAppearanceSettings(); break;
-    case 'workspace': content.innerHTML = renderWorkspaceSettings(); break;
-    case 'data': content.innerHTML = renderDataSettings(); break;
-    case 'shortcuts': content.innerHTML = renderShortcutsSettings(); break;
-    case 'about': content.innerHTML = renderAboutSettings(); break;
-    default: content.innerHTML = renderGeneralSettings();
-  }
-
-  // Bind events after rendering
-  bindSettingsEvents(tab);
-}
-
-// ============================================================
-// General Settings
-// ============================================================
-
-function renderGeneralSettings() {
-  return `
-    <div class="settings-section active">
-      <h2 class="settings-section-title">通用设置</h2>
-      <p class="settings-section-desc">管理应用的基础行为和偏好设置</p>
-
-      <div class="settings-group">
-        <div class="settings-group-label">语言与区域</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">界面语言</div>
-            <div class="settings-row-desc">选择应用界面显示语言</div>
-          </div>
-          <div class="settings-control">
-            <select class="settings-select" data-setting="language">
-              <option value="zh-CN" ${appSettings.language === 'zh-CN' ? 'selected' : ''}>简体中文</option>
-              <option value="zh-TW" ${appSettings.language === 'zh-TW' ? 'selected' : ''}>繁體中文</option>
-              <option value="en" ${appSettings.language === 'en' ? 'selected' : ''}>English</option>
-              <option value="ja" ${appSettings.language === 'ja' ? 'selected' : ''}>日本語</option>
-            </select>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">日期格式</div>
-            <div class="settings-row-desc">文件日期的显示格式</div>
-          </div>
-          <div class="settings-control">
-            <select class="settings-select" data-setting="dateFormat">
-              <option value="YYYY-MM-DD" ${appSettings.dateFormat === 'YYYY-MM-DD' ? 'selected' : ''}>2024-01-15</option>
-              <option value="DD/MM/YYYY" ${appSettings.dateFormat === 'DD/MM/YYYY' ? 'selected' : ''}>15/01/2024</option>
-              <option value="MM/DD/YYYY" ${appSettings.dateFormat === 'MM/DD/YYYY' ? 'selected' : ''}>01/15/2024</option>
-              <option value="YYYY年MM月DD日" ${appSettings.dateFormat === 'YYYY年MM月DD日' ? 'selected' : ''}>2024年01月15日</option>
-            </select>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">时间格式</div>
-            <div class="settings-row-desc">时间使用 12 小时或 24 小时制</div>
-          </div>
-          <div class="settings-control">
-            <select class="settings-select" data-setting="timeFormat">
-              <option value="24h" ${appSettings.timeFormat === '24h' ? 'selected' : ''}>24 小时制</option>
-              <option value="12h" ${appSettings.timeFormat === '12h' ? 'selected' : ''}>12 小时制</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">启动与导航</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">启动模块</div>
-            <div class="settings-row-desc">打开应用时默认进入的模块</div>
-          </div>
-          <div class="settings-control">
-            <select class="settings-select" data-setting="startModule">
-              <option value="daily" ${appSettings.startModule === 'daily' ? 'selected' : ''}>任务管理</option>
-              <option value="project" ${appSettings.startModule === 'project' ? 'selected' : ''}>项目管理</option>
-              <option value="data" ${appSettings.startModule === 'data' ? 'selected' : ''}>数据分析</option>
-              <option value="finance" ${appSettings.startModule === 'finance' ? 'selected' : ''}>财务管理</option>
-              <option value="assets" ${appSettings.startModule === 'assets' ? 'selected' : ''}>资产管理</option>
-              <option value="settings" ${appSettings.startModule === 'settings' ? 'selected' : ''}>设置</option>
-            </select>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">记住上次文件夹</div>
-            <div class="settings-row-desc">下次打开时自动定位到上次浏览的文件夹</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="rememberLastFolder" ${appSettings.rememberLastFolder ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">最近打开记录上限</div>
-            <div class="settings-row-desc">侧边栏最近打开列表的最大项目数</div>
-          </div>
-          <div class="settings-control">
-            <input type="number" class="settings-input" data-setting="recentlyOpenedLimit" value="${appSettings.recentlyOpenedLimit}" min="1" max="50">
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">自动保存</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">启用自动保存</div>
-            <div class="settings-row-desc">定期自动保存工作区数据到本地存储</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="autoSave" ${appSettings.autoSave ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">自动保存间隔</div>
-            <div class="settings-row-desc">自动保存的时间间隔（秒）</div>
-          </div>
-          <div class="settings-control">
-            <input type="range" class="settings-range" data-setting="autoSaveInterval" min="10" max="300" step="10" value="${appSettings.autoSaveInterval}">
-            <span class="settings-range-value" data-range-display="autoSaveInterval">${appSettings.autoSaveInterval}s</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">操作确认</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">删除前确认</div>
-            <div class="settings-row-desc">删除文件或文件夹时弹出确认对话框</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="confirmBeforeDelete" ${appSettings.confirmBeforeDelete ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">关闭标签页前确认</div>
-            <div class="settings-row-desc">关闭未保存的工作区标签时弹出确认</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="confirmCloseTab" ${appSettings.confirmCloseTab ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">通知与反馈</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">启用通知提示</div>
-            <div class="settings-row-desc">操作完成时显示 Toast 通知</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="enableNotifications" ${appSettings.enableNotifications ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">操作音效</div>
-            <div class="settings-row-desc">执行操作时播放音效反馈</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="enableSound" ${appSettings.enableSound ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">剪贴板监听</div>
-            <div class="settings-row-desc">监听剪贴板内容，自动检测文件链接</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="clipboardMonitoring" ${appSettings.clipboardMonitoring ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// ============================================================
-// Appearance Settings
-// ============================================================
-
-function renderAppearanceSettings() {
-  const themeCards = Object.entries({
-    dark: { icon: '🌙', label: '深色' },
-    light: { icon: '☀️', label: '浅色' },
-    midnight: { icon: '🌃', label: '午夜' },
-    forest: { icon: '🌲', label: '森林' }
-  }).map(([key, val]) => `
-    <div class="settings-radio-card ${appSettings.theme === key ? 'active' : ''}" data-setting-radio="theme" data-value="${key}">
-      <span class="settings-radio-card-icon">${val.icon}</span>
-      <span class="settings-radio-card-label">${val.label}</span>
-    </div>
-  `).join('');
-
-  const colorSwatches = Object.entries(ACCENT_COLORS).map(([key, val]) => `
-    <div class="settings-color-swatch ${appSettings.accentColor === key ? 'active' : ''}"
-         data-setting-color="${key}"
-         style="background: ${val.color};"></div>
-  `).join('');
-
-  const fontCards = Object.entries({
-    system: { icon: '🔤', label: '系统默认' },
-    serif: { icon: '📖', label: '衬线体' },
-    mono: { icon: '💻', label: '等宽体' },
-    rounded: { icon: '🔵', label: '圆角体' }
-  }).map(([key, val]) => `
-    <div class="settings-radio-card ${appSettings.fontFamily === key ? 'active' : ''}" data-setting-radio="fontFamily" data-value="${key}">
-      <span class="settings-radio-card-icon">${val.icon}</span>
-      <span class="settings-radio-card-label">${val.label}</span>
-    </div>
-  `).join('');
-
-  return `
-    <div class="settings-section active">
-      <h2 class="settings-section-title">外观设置</h2>
-      <p class="settings-section-desc">自定义应用的主题、颜色和布局</p>
-
-      <div class="settings-group">
-        <div class="settings-group-label">主题</div>
-        <div class="settings-radio-group">
-          ${themeCards}
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">强调色</div>
-        <div class="settings-color-swatches">
-          ${colorSwatches}
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">字体</div>
-        <div class="settings-radio-group">
-          ${fontCards}
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">布局尺寸</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">侧边栏宽度</div>
-            <div class="settings-row-desc">项目侧边栏的宽度（像素）</div>
-          </div>
-          <div class="settings-control">
-            <input type="range" class="settings-range" data-setting="sidebarWidth" min="200" max="400" step="10" value="${appSettings.sidebarWidth}">
-            <span class="settings-range-value" data-range-display="sidebarWidth">${appSettings.sidebarWidth}px</span>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">详情面板宽度</div>
-            <div class="settings-row-desc">右侧详情面板的宽度（像素）</div>
-          </div>
-          <div class="settings-control">
-            <input type="range" class="settings-range" data-setting="detailPanelWidth" min="240" max="480" step="10" value="${appSettings.detailPanelWidth}">
-            <span class="settings-range-value" data-range-display="detailPanelWidth">${appSettings.detailPanelWidth}px</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">显示选项</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">紧凑模式</div>
-            <div class="settings-row-desc">减少元素间距，在屏幕上显示更多内容</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="compactMode" ${appSettings.compactMode ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">显示文件扩展名</div>
-            <div class="settings-row-desc">在文件列表中显示文件扩展名</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="showFileExtensions" ${appSettings.showFileExtensions ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">显示隐藏文件</div>
-            <div class="settings-row-desc">显示以 . 开头的隐藏文件和文件夹</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="showHiddenFiles" ${appSettings.showHiddenFiles ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">缩略图质量</div>
-            <div class="settings-row-desc">图片和视频缩略图的渲染质量</div>
-          </div>
-          <div class="settings-control">
-            <select class="settings-select" data-setting="thumbnailQuality">
-              <option value="low" ${appSettings.thumbnailQuality === 'low' ? 'selected' : ''}>低质量（快速）</option>
-              <option value="medium" ${appSettings.thumbnailQuality === 'medium' ? 'selected' : ''}>中等质量</option>
-              <option value="high" ${appSettings.thumbnailQuality === 'high' ? 'selected' : ''}>高质量（推荐）</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">动画效果</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">动画速度</div>
-            <div class="settings-row-desc">界面过渡动画的播放速度</div>
-          </div>
-          <div class="settings-control">
-            <select class="settings-select" data-setting="animationSpeed">
-              <option value="fast" ${appSettings.animationSpeed === 'fast' ? 'selected' : ''}>快速</option>
-              <option value="normal" ${appSettings.animationSpeed === 'normal' ? 'selected' : ''}>正常</option>
-              <option value="slow" ${appSettings.animationSpeed === 'slow' ? 'selected' : ''}>缓慢</option>
-              <option value="none" ${appSettings.animationSpeed === 'none' ? 'selected' : ''}>关闭动画</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// ============================================================
-// Workspace Settings
-// ============================================================
-
-function renderWorkspaceSettings() {
-  const viewCards = Object.entries({
-    grid: { icon: '▦', label: '网格视图' },
-    list: { icon: '☰', label: '列表视图' },
-    table: { icon: '☰', label: '列表视图' },
-    preview: { icon: '◉', label: '预览视图' },
-    plugin: { icon: '◈', label: '插件视图' }
-  }).map(([key, val]) => `
-    <div class="settings-radio-card ${appSettings.defaultView === key ? 'active' : ''}" data-setting-radio="defaultView" data-value="${key}">
-      <span class="settings-radio-card-icon">${val.icon}</span>
-      <span class="settings-radio-card-label">${val.label}</span>
-    </div>
-  `).join('');
-
-  const gridSizes = Object.entries({
-    'smallest': { icon: '·', label: '最小' },
-    'small': { icon: '▪', label: '小' },
-    'medium': { icon: '■', label: '中' },
-    'large': { icon: '⬛', label: '大' },
-    'largest': { icon: '⬛⬛', label: '最大' }
-  }).map(([key, val]) => `
-    <div class="settings-radio-card ${appSettings.defaultGridSize === key ? 'active' : ''}" data-setting-radio="defaultGridSize" data-value="${key}">
-      <span class="settings-radio-card-icon">${val.icon}</span>
-      <span class="settings-radio-card-label">${val.label}</span>
-    </div>
-  `).join('');
-
-  return `
-    <div class="settings-section active">
-      <h2 class="settings-section-title">工作区设置</h2>
-      <p class="settings-section-desc">配置文件浏览、排序和展示的默认行为</p>
-
-      <div class="settings-group">
-        <div class="settings-group-label">默认视图</div>
-        <div class="settings-radio-group">
-          ${viewCards}
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">默认网格大小</div>
-        <div class="settings-radio-group">
-          ${gridSizes}
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">列表与排序</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">每页显示数量</div>
-            <div class="settings-row-desc">文件列表每页显示的最大文件数</div>
-          </div>
-          <div class="settings-control">
-            <input type="number" class="settings-input" data-setting="itemsPerPage" value="${appSettings.itemsPerPage}" min="10" max="500" step="10">
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">默认排序字段</div>
-            <div class="settings-row-desc">打开新文件夹时的默认排序依据</div>
-          </div>
-          <div class="settings-control">
-            <select class="settings-select" data-setting="sortBy">
-              <option value="name" ${appSettings.sortBy === 'name' ? 'selected' : ''}>名称</option>
-              <option value="modified" ${appSettings.sortBy === 'modified' ? 'selected' : ''}>修改时间</option>
-              <option value="size" ${appSettings.sortBy === 'size' ? 'selected' : ''}>大小</option>
-              <option value="type" ${appSettings.sortBy === 'type' ? 'selected' : ''}>类型</option>
-            </select>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">排序方向</div>
-            <div class="settings-row-desc">升序或降序排列</div>
-          </div>
-          <div class="settings-control">
-            <select class="settings-select" data-setting="sortOrder">
-              <option value="asc" ${appSettings.sortOrder === 'asc' ? 'selected' : ''}>升序 (A→Z)</option>
-              <option value="desc" ${appSettings.sortOrder === 'desc' ? 'selected' : ''}>降序 (Z→A)</option>
-            </select>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">列表中显示标签</div>
-            <div class="settings-row-desc">在文件列表中显示文件标签</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="showTagsInList" ${appSettings.showTagsInList ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">交互行为</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">双击打开文件</div>
-            <div class="settings-row-desc">双击文件时打开预览，单击仅选中</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="doubleClickToOpen" ${appSettings.doubleClickToOpen ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">启用拖放上传</div>
-            <div class="settings-row-desc">允许通过拖放文件到内容区域上传</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="enableDragDrop" ${appSettings.enableDragDrop ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">自动刷新</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">启用自动刷新</div>
-            <div class="settings-row-desc">定期刷新文件列表以检测变更</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="enableAutoRefresh" ${appSettings.enableAutoRefresh ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">刷新间隔</div>
-            <div class="settings-row-desc">自动刷新的时间间隔（秒）</div>
-          </div>
-          <div class="settings-control">
-            <input type="range" class="settings-range" data-setting="autoRefreshInterval" min="10" max="600" step="10" value="${appSettings.autoRefreshInterval}">
-            <span class="settings-range-value" data-range-display="autoRefreshInterval">${appSettings.autoRefreshInterval}s</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">状态栏</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">显示状态栏</div>
-            <div class="settings-row-desc">在底部显示文件数量、总大小等信息</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="showStatusBar" ${appSettings.showStatusBar ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">任务附件</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">手风琴模式</div>
-            <div class="settings-row-desc">同时只能展开一个任务的附件栏，展开新任务时自动折叠上一个</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="accordionAttachment" ${appSettings.accordionAttachment ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// ============================================================
-// Data & Storage Settings
-// ============================================================
-
-function renderDataSettings() {
-  // Calculate storage usage
-  let totalSize = 0;
-  const storageItems = [];
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const val = localStorage.getItem(key) || '';
-    const size = new Blob([val]).size;
-    totalSize += size;
-    if (key && key.startsWith('resourceHub_')) {
-      storageItems.push({ key, size, sizeKB: (size / 1024).toFixed(1) });
-    }
-  }
-  storageItems.sort((a, b) => b.size - a.size);
-  const totalKB = (totalSize / 1024).toFixed(1);
-  const totalMB = (totalSize / (1024 * 1024)).toFixed(2);
-  const maxMB = appSettings.maxStorageMB || 100;
-  const usagePercent = Math.min(100, (totalSize / (maxMB * 1024 * 1024)) * 100).toFixed(1);
-
-  return `
-    <div class="settings-section active">
-      <h2 class="settings-section-title">数据与存储</h2>
-      <p class="settings-section-desc">管理本地存储、数据备份和版本控制</p>
-
-      <div class="settings-group">
-        <div class="settings-group-label">存储使用情况</div>
-        <div class="settings-info-card">
-          <div class="settings-info-row">
-            <span class="settings-info-key">已使用</span>
-            <span class="settings-info-val">${totalMB} MB</span>
-          </div>
-          <div class="settings-info-row">
-            <span class="settings-info-key">总限额</span>
-            <span class="settings-info-val">${maxMB} MB</span>
-          </div>
-          <div class="settings-info-row">
-            <span class="settings-info-key">使用率</span>
-            <span class="settings-info-val">${usagePercent}%</span>
-          </div>
-          <div class="settings-storage-bar">
-            <div class="settings-storage-fill" style="width: ${usagePercent}%"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">存储明细</div>
-        <div class="settings-info-card">
-          ${storageItems.slice(0, 10).map(item => `
-            <div class="settings-info-row">
-              <span class="settings-info-key">${item.key}</span>
-              <span class="settings-info-val">${item.sizeKB} KB</span>
-            </div>
-          `).join('')}
-          ${storageItems.length === 0 ? '<div class="settings-info-row"><span class="settings-info-key">暂无数据</span></div>' : ''}
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">数据管理</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">自动清理</div>
-            <div class="settings-row-desc">定期清理过期的临时数据和缓存</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="autoCleanup" ${appSettings.autoCleanup ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">清理周期</div>
-            <div class="settings-row-desc">自动清理超过指定天数的临时数据</div>
-          </div>
-          <div class="settings-control">
-            <input type="number" class="settings-input" data-setting="autoCleanupDays" value="${appSettings.autoCleanupDays}" min="1" max="365">
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">版本控制</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">启用版本管理</div>
-            <div class="settings-row-desc">保存文件的历史版本，支持回滚</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="enableVersioning" ${appSettings.enableVersioning ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">最大版本数</div>
-            <div class="settings-row-desc">每个文件保留的最大历史版本数</div>
-          </div>
-          <div class="settings-control">
-            <input type="number" class="settings-input" data-setting="maxVersions" value="${appSettings.maxVersions}" min="1" max="100">
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">数据导入导出</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">导出数据</div>
-            <div class="settings-row-desc">将所有工作区数据导出为 JSON 文件</div>
-          </div>
-          <div class="settings-control">
-            <button class="settings-btn settings-btn-primary" onclick="exportAllData()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              导出
-            </button>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">导入数据</div>
-            <div class="settings-row-desc">从 JSON 文件导入工作区数据</div>
-          </div>
-          <div class="settings-control">
-            <button class="settings-btn" onclick="importAllData()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              导入
-            </button>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">导出时压缩</div>
-            <div class="settings-row-desc">导出数据时使用 gzip 压缩以减小文件体积</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="compressExport" ${appSettings.compressExport ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">重置与清理</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">清除缓存</div>
-            <div class="settings-row-desc">清除缩略图缓存和临时文件</div>
-          </div>
-          <div class="settings-control">
-            <button class="settings-btn" onclick="clearCache()">清除缓存</button>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">重置设置为默认</div>
-            <div class="settings-row-desc">将所有设置恢复为出厂默认值</div>
-          </div>
-          <div class="settings-control">
-            <button class="settings-btn" onclick="resetSettings()">重置设置</button>
-          </div>
-        </div>
-        <div class="settings-divider"></div>
-        <div class="settings-danger-zone">
-          <div class="settings-danger-zone-label">⚠ 危险操作</div>
-          <div class="settings-row">
-            <div class="settings-row-info">
-              <div class="settings-row-label">清除所有数据</div>
-              <div class="settings-row-desc">删除所有本地存储数据，此操作不可恢复</div>
-            </div>
-            <div class="settings-control">
-              <button class="settings-btn settings-btn-danger" onclick="clearAllData()">清除全部</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// ============================================================
-// Shortcuts Settings
-// ============================================================
-
-function renderShortcutsSettings() {
-  const shortcuts = [
-    { action: '新建文件夹', keys: ['Ctrl', 'Shift', 'N'] },
-    { action: '上传文件', keys: ['Ctrl', 'U'] },
-    { action: '搜索文件', keys: ['Ctrl', 'F'] },
-    { action: '全选', keys: ['Ctrl', 'A'] },
-    { action: '复制', keys: ['Ctrl', 'C'] },
-    { action: '粘贴', keys: ['Ctrl', 'V'] },
-    { action: '剪切', keys: ['Ctrl', 'X'] },
-    { action: '重命名', keys: ['F2'] },
-    { action: '删除', keys: ['Delete'] },
-    { action: '预览文件', keys: ['Space'] },
-    { action: '打开文件', keys: ['Enter'] },
-    { action: '返回上级', keys: ['Backspace'] },
-    { action: '切换网格视图', keys: ['Ctrl', '1'] },
-    { action: '切换列表视图', keys: ['Ctrl', '2'] },
-    { action: '切换列表视图', keys: ['Ctrl', '3'] },
-    { action: '切换预览视图', keys: ['Ctrl', '4'] },
-    { action: '切换全屏', keys: ['F11'] },
-    { action: '关闭对话框', keys: ['Esc'] },
-    { action: '刷新列表', keys: ['F5'] },
-    { action: '切换详情面板', keys: ['Ctrl', 'D'] }
-  ];
-
-  return `
-    <div class="settings-section active">
-      <h2 class="settings-section-title">快捷键</h2>
-      <p class="settings-section-desc">查看和配置键盘快捷键</p>
-
-      <div class="settings-group">
-        <div class="settings-group-label">快捷键设置</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">启用键盘快捷键</div>
-            <div class="settings-row-desc">允许使用键盘快捷键执行操作</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="enableShortcuts" ${appSettings.enableShortcuts ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">快捷键列表</div>
-        <div class="settings-shortcut-list">
-          ${shortcuts.map(s => `
-            <div class="settings-shortcut-row">
-              <span>${s.action}</span>
-              <span class="settings-shortcut-key">
-                ${s.keys.map(k => `<kbd>${k}</kbd>`).join('')}
-              </span>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// ============================================================
-// About Settings
-// ============================================================
-
-function renderAboutSettings() {
-  return `
-    <div class="settings-section active">
-      <h2 class="settings-section-title">关于</h2>
-      <p class="settings-section-desc">应用信息和版本详情</p>
-
-      <div class="settings-group">
-        <div class="settings-about-logo" style="margin: 0 auto 16px;">R</div>
-        <div style="text-align: center; margin-bottom: 24px;">
-          <div style="font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">任务管理系统</div>
-          <div style="font-size: 13px; color: var(--text-tertiary);">任务管理与日报</div>
-          <div style="margin-top: 8px;">
-            <span class="settings-badge">v${appSettings.version || '2.0.0'}</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">应用信息</div>
-        <div class="settings-info-card">
-          <div class="settings-info-row">
-            <span class="settings-info-key">版本号</span>
-            <span class="settings-info-val">${appSettings.version || '2.0.0'}</span>
-          </div>
-          <div class="settings-info-row">
-            <span class="settings-info-key">构建日期</span>
-            <span class="settings-info-val">2024-12-01</span>
-          </div>
-          <div class="settings-info-row">
-            <span class="settings-info-key">运行环境</span>
-            <span class="settings-info-val">${navigator.userAgent.includes('Chrome') ? 'Chrome' : navigator.userAgent.includes('Firefox') ? 'Firefox' : navigator.userAgent.includes('Safari') ? 'Safari' : 'Unknown'}</span>
-          </div>
-          <div class="settings-info-row">
-            <span class="settings-info-key">语言</span>
-            <span class="settings-info-val">${navigator.language}</span>
-          </div>
-          <div class="settings-info-row">
-            <span class="settings-info-key">屏幕分辨率</span>
-            <span class="settings-info-val">${window.screen.width} × ${window.screen.height}</span>
-          </div>
-          <div class="settings-info-row">
-            <span class="settings-info-key">本地存储大小</span>
-            <span class="settings-info-val">${(getLocalStorageSize() / 1024).toFixed(1)} KB</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">更新</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">自动检查更新</div>
-            <div class="settings-row-desc">启动时自动检查是否有新版本</div>
-          </div>
-          <div class="settings-control">
-            <label class="settings-toggle">
-              <input type="checkbox" data-setting="checkUpdates" ${appSettings.checkUpdates ? 'checked' : ''}>
-              <span class="settings-toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-        <div class="settings-row" style="margin-top: 12px;">
-          <div class="settings-control">
-            <button class="settings-btn settings-btn-primary" onclick="checkForUpdates()">检查更新</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group-label">反馈与支持</div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">问题反馈</div>
-            <div class="settings-row-desc">报告 Bug 或提出功能建议</div>
-          </div>
-          <div class="settings-control">
-            <button class="settings-btn" onclick="showToast('反馈通道已打开', 'info')">提交反馈</button>
-          </div>
-        </div>
-        <div class="settings-row">
-          <div class="settings-row-info">
-            <div class="settings-row-label">帮助文档</div>
-            <div class="settings-row-desc">查看使用指南和 API 文档</div>
-          </div>
-          <div class="settings-control">
-            <button class="settings-btn" onclick="showToast('文档已在新窗口打开', 'info')">查看文档</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-divider"></div>
-      <div style="text-align: center; font-size: 12px; color: var(--text-tertiary); padding: 12px 0;">
-        Made with ❤️ · © 2024 任务管理系统
-      </div>
-    </div>
-  `;
-}
-
-// ============================================================
-// Settings Event Binding
-// ============================================================
-
-function bindSettingsEvents(tab) {
-  const content = document.getElementById('settingsContent');
-  if (!content) return;
-
-  // Toggle switches
-  content.querySelectorAll('input[type="checkbox"][data-setting]').forEach(input => {
-    input.addEventListener('change', (e) => {
-      const key = e.target.dataset.setting;
-      setSetting(key, e.target.checked);
-      showToast(`已更新：${getSettingLabel(key)}`, 'success');
-    });
-  });
-
-  // Select dropdowns
-  content.querySelectorAll('select[data-setting]').forEach(select => {
-    select.addEventListener('change', (e) => {
-      const key = e.target.dataset.setting;
-      setSetting(key, e.target.value);
-      showToast(`已更新：${getSettingLabel(key)}`, 'success');
-    });
-  });
-
-  // Number inputs
-  content.querySelectorAll('input[type="number"][data-setting]').forEach(input => {
-    input.addEventListener('change', (e) => {
-      const key = e.target.dataset.setting;
-      const val = parseInt(e.target.value) || DEFAULT_SETTINGS[key] || 0;
-      e.target.value = val;
-      setSetting(key, val);
-      showToast(`已更新：${getSettingLabel(key)}`, 'success');
-    });
-  });
-
-  // Range sliders
-  content.querySelectorAll('input[type="range"][data-setting]').forEach(input => {
-    input.addEventListener('input', (e) => {
-      const key = e.target.dataset.setting;
-      const val = parseInt(e.target.value);
-      const display = content.querySelector(`[data-range-display="${key}"]`);
-      if (display) {
-        const suffix = key.includes('Width') ? 'px' : 's';
-        display.textContent = val + suffix;
-      }
-    });
-    input.addEventListener('change', (e) => {
-      const key = e.target.dataset.setting;
-      const val = parseInt(e.target.value);
-      setSetting(key, val);
-    });
-  });
-
-  // Radio cards (theme, view, font, grid size)
-  content.querySelectorAll('[data-setting-radio]').forEach(card => {
-    card.addEventListener('click', (e) => {
-      const key = e.currentTarget.dataset.settingRadio;
-      const val = e.currentTarget.dataset.value;
-      // Update active state
-      content.querySelectorAll(`[data-setting-radio="${key}"]`).forEach(c => {
-        c.classList.toggle('active', c.dataset.value === val);
-      });
-      setSetting(key, val);
-      showToast(`已更新：${getSettingLabel(key)}`, 'success');
-    });
-  });
-
-  // Color swatches
-  content.querySelectorAll('[data-setting-color]').forEach(swatch => {
-    swatch.addEventListener('click', (e) => {
-      const val = e.currentTarget.dataset.settingColor;
-      content.querySelectorAll('[data-setting-color]').forEach(s => {
-        s.classList.toggle('active', s.dataset.settingColor === val);
-      });
-      setSetting('accentColor', val);
-      showToast(`已更新强调色`, 'success');
-    });
-  });
-}
-
-// Get human-readable label for a setting key
-function getSettingLabel(key) {
-  const labels = {
-    language: '界面语言',
-    startModule: '启动模块',
-    autoSave: '自动保存',
-    autoSaveInterval: '自动保存间隔',
-    confirmBeforeDelete: '删除确认',
-    enableNotifications: '通知提示',
-    enableSound: '操作音效',
-    dateFormat: '日期格式',
-    timeFormat: '时间格式',
-    recentlyOpenedLimit: '最近打开上限',
-    clipboardMonitoring: '剪贴板监听',
-    rememberLastFolder: '记住文件夹',
-    confirmCloseTab: '关闭确认',
-    theme: '主题',
-    accentColor: '强调色',
-    sidebarWidth: '侧边栏宽度',
-    detailPanelWidth: '详情面板宽度',
-    compactMode: '紧凑模式',
-    showFileExtensions: '文件扩展名',
-    showHiddenFiles: '隐藏文件',
-    thumbnailQuality: '缩略图质量',
-    animationSpeed: '动画速度',
-    fontFamily: '字体',
-    defaultView: '默认视图',
-    defaultGridSize: '网格大小',
-    itemsPerPage: '每页数量',
-    sortBy: '排序字段',
-    sortOrder: '排序方向',
-    showTagsInList: '标签显示',
-    doubleClickToOpen: '双击打开',
-    enableDragDrop: '拖放上传',
-    enableAutoRefresh: '自动刷新',
-    autoRefreshInterval: '刷新间隔',
-    showStatusBar: '状态栏',
-    accordionAttachment: '附件手风琴模式',
-    autoCleanup: '自动清理',
-    autoCleanupDays: '清理周期',
-    enableVersioning: '版本管理',
-    maxVersions: '最大版本数',
-    compressExport: '导出压缩',
-    enableShortcuts: '快捷键',
-    checkUpdates: '检查更新'
-  };
-  return labels[key] || key;
-}
-
-// ============================================================
-// Settings Data Operations
-// ============================================================
-
-function getLocalStorageSize() {
-  let total = 0;
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const val = localStorage.getItem(key) || '';
-    total += new Blob([key + val]).size;
-  }
-  return total;
-}
-
-function exportAllData() {
-  const data = {
-    settings: appSettings,
-    taskSystem: JSON.parse(localStorage.getItem('resourceHub_taskSystem_v2') || '{}'),
-    taskLists: JSON.parse(localStorage.getItem('resourceHub_taskLists_v2') || '[]'),
-    taskGroups: JSON.parse(localStorage.getItem('resourceHub_taskGroups_v2') || '[]'),
-    dailyReports: JSON.parse(localStorage.getItem('resourceHub_dailyReports') || '[]'),
-    exportDate: new Date().toISOString(),
-    version: appSettings.version || '2.0.0'
-  };
-
-  const json = JSON.stringify(data, null, 2);
-  const blob = new Blob([json], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `resource-hub-backup-${new Date().toISOString().slice(0, 10)}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast('数据已导出', 'success');
-}
-
-function importAllData() {
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = '.json';
-  input.onchange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      try {
-        const data = JSON.parse(ev.target.result);
-        if (data.settings) {
-          appSettings = Object.assign({}, DEFAULT_SETTINGS, data.settings);
-          saveAppSettings();
-          applySettingsToUI();
-        }
-        if (data.taskSystem) localStorage.setItem('resourceHub_taskSystem_v2', JSON.stringify(data.taskSystem));
-        if (data.taskLists) localStorage.setItem('resourceHub_taskLists_v2', JSON.stringify(data.taskLists));
-        if (data.taskGroups) localStorage.setItem('resourceHub_taskGroups_v2', JSON.stringify(data.taskGroups));
-        if (data.dailyReports) localStorage.setItem('resourceHub_dailyReports', JSON.stringify(data.dailyReports));
-        showToast('数据已导入，正在刷新...', 'success');
-        setTimeout(() => location.reload(), 1000);
-      } catch (err) {
-        showToast('导入失败：文件格式错误', 'error');
-      }
-    };
-    reader.readAsText(file);
-  };
-  input.click();
-}
-
-function clearCache() {
-  // Clear non-essential localStorage keys (thumbnails, temp data)
-  let cleared = 0;
-  for (let i = localStorage.length - 1; i >= 0; i--) {
-    const key = localStorage.key(i);
-    if (key && (key.includes('thumb') || key.includes('temp') || key.includes('cache'))) {
-      localStorage.removeItem(key);
-      cleared++;
-    }
-  }
-  showToast(`已清除 ${cleared} 项缓存`, 'success');
-  // Refresh the data settings page
-  renderSettingsPage('data');
-}
-
-function resetSettings() {
-  if (!confirm('确定要将所有设置恢复为默认值吗？')) return;
-  appSettings = Object.assign({}, DEFAULT_SETTINGS);
-  saveAppSettings();
-  applySettingsToUI();
-  showToast('设置已重置为默认值', 'success');
-  renderSettingsPage('general');
-}
-
-function clearAllData() {
-  if (!confirm('⚠ 警告：此操作将删除所有本地数据，包括任务清单、日报和设置！\n\n此操作不可恢复，请确保已备份重要数据。\n\n确认继续？')) return;
-  if (!confirm('再次确认：真的要清除全部数据吗？')) return;
-  localStorage.clear();
-  showToast('所有数据已清除，即将刷新...', 'success');
-  setTimeout(() => location.reload(), 1500);
-}
-
-function checkForUpdates() {
-  showToast('当前已是最新版本 v' + (appSettings.version || '2.0.0'), 'info');
-}
-
-// Initialize settings on load
-loadAppSettings();
 </script>
 </body>
 </html>
