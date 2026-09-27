@@ -2525,150 +2525,162 @@
   }
 
   /* ===== 高光 tab ===== */
-  .home-highlight-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-bottom: 8px;
-  }
-  .home-highlight-stat {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 16px;
-    text-align: center;
-  }
-  .home-highlight-stat-value {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  .home-highlight-stat-label {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    margin-top: 4px;
-  }
-  .home-highlight-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 16px 20px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    transition: all var(--transition);
-    border-left: 3px solid var(--warning);
-  }
-  .home-highlight-card:hover {
-    border-color: var(--warning);
-    background: var(--bg-tertiary);
-    transform: translateX(2px);
-  }
-  .home-highlight-card-header {
+  .home-highlights-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .home-highlights-header-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .home-highlights-header-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .home-highlights-header-count {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    padding: 2px 10px;
+    background: var(--bg-elevated);
+    border-radius: 12px;
+  }
+  .home-highlight-list {
+    display: flex;
+    flex-direction: column;
     gap: 14px;
   }
-  .home-highlight-date {
+  .home-highlight-record {
+    display: flex;
+    gap: 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    border-left: 3px solid var(--warning);
+    transition: all var(--transition);
+  }
+  .home-highlight-record:hover {
+    border-color: var(--warning);
+    background: var(--bg-tertiary);
+  }
+  .home-highlight-record-date {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 40px;
+    min-width: 44px;
+    padding-top: 2px;
   }
-  .home-highlight-day {
-    font-size: 20px;
+  .home-highlight-record-day {
+    font-size: 22px;
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1;
   }
-  .home-highlight-month {
+  .home-highlight-record-month {
     font-size: 11px;
     color: var(--text-tertiary);
-    margin-top: 2px;
+    margin-top: 3px;
   }
-  .home-highlight-card-title {
-    flex: 1;
-  }
-  .home-highlight-score {
-    font-size: 22px;
-    font-weight: 700;
-    text-align: right;
-    min-width: 50px;
-  }
-  .home-highlight-tasks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px dashed var(--border-color);
-  }
-  .home-highlight-task-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 3px 10px;
-    background: var(--bg-elevated);
-    border-radius: 12px;
-    font-size: 12px;
-    color: var(--success);
-    max-width: 260px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .home-highlight-note {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: var(--bg-elevated);
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-    color: var(--text-secondary);
-    font-style: italic;
-    border-left: 2px solid var(--accent);
-  }
-
-  /* ===== 寄语 tab ===== */
-  .home-message-timeline {
-    position: relative;
-    padding-left: 8px;
-  }
-  .home-message-item {
-    display: flex;
-    gap: 14px;
-    padding: 14px 0;
-    cursor: pointer;
-    transition: all var(--transition);
-    border-radius: var(--radius-sm);
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  .home-message-item:hover {
-    background: var(--bg-secondary);
-  }
-  .home-message-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-    margin-top: 6px;
-    box-shadow: 0 0 0 3px var(--accent-soft);
-  }
-  .home-message-content {
+  .home-highlight-record-body {
     flex: 1;
     min-width: 0;
   }
-  .home-message-date {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    margin-bottom: 4px;
-  }
-  .home-message-text {
-    font-size: 14px;
+  .home-highlight-record-title {
+    font-size: 15px;
+    font-weight: 600;
     color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .home-highlight-record-content {
+    font-size: 13px;
+    color: var(--text-secondary);
     line-height: 1.7;
     white-space: pre-wrap;
     word-break: break-word;
+    margin-bottom: 8px;
+  }
+  .home-highlight-record-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+  .home-highlight-record-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .home-highlight-record-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .home-highlight-record-actions button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .home-highlight-record-actions button:last-child:hover {
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .home-like-btn,
+  .home-plusone-btn {
+    width: auto !important;
+    padding: 0 10px !important;
+    gap: 4px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+  }
+  .home-like-btn:hover {
+    border-color: var(--red) !important;
+    color: var(--red) !important;
+  }
+  .home-like-btn.liked {
+    background: rgba(248,113,113,0.12) !important;
+    border-color: var(--red) !important;
+    color: var(--red) !important;
+  }
+  .home-plusone-btn:hover {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+  }
+  .home-highlights-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .home-highlights-empty-icon {
+    font-size: 56px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+  .home-highlights-empty-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .home-highlights-empty-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    max-width: 360px;
+    line-height: 1.6;
   }
 
   /* ===== 个人资料 tab ===== */
@@ -2775,7 +2787,126 @@
     font-weight: 500;
   }
 
-  /* ===== Daily Search Box ===== */
+  /* ===== Rating Card (能力评估) ===== */
+  .rating-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+  .rating-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .rating-card-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .rating-card-sub {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+  }
+  .rating-overall {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+  }
+  .rating-overall-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .rating-overall-unit {
+    font-size: 13px;
+    color: var(--text-tertiary);
+  }
+  .rating-card-body {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .rating-radar-wrap {
+    flex-shrink: 0;
+    width: 260px;
+    height: 260px;
+  }
+  .rating-radar {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .rating-dims {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rating-dim-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 12px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+  }
+  .rating-dim-name {
+    width: 42px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex-shrink: 0;
+  }
+  .rating-dim-stars {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+  .rating-star {
+    font-size: 18px;
+    color: var(--border-color);
+    cursor: pointer;
+    transition: color 0.15s, transform 0.1s;
+    user-select: none;
+    line-height: 1;
+  }
+  .rating-star:hover {
+    transform: scale(1.15);
+  }
+  .rating-star.active {
+    color: var(--warning);
+  }
+  .rating-dim-score {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .rating-dim-avg {
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+  .rating-dim-num {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 32px;
+    text-align: right;
+  }
+
+
   .daily-search-box {
     display: flex;
     align-items: center;
@@ -3946,13 +4077,9 @@
         <div class="daily-sidebar-subtitle">员工信息与日报管理</div>
       </div>
       <div class="ts-nav-section-label">我的</div>
-      <div class="daily-nav-item active" data-daily-tab="workbench" onclick="switchDailyTab('workbench')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        <span>工作台</span>
-      </div>
-      <div class="daily-nav-item" data-daily-tab="mine" onclick="switchDailyTab('mine')">
+      <div class="daily-nav-item active" data-daily-tab="mine" onclick="switchDailyTab('mine')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>我的主页</span>
+        <span>我的</span>
         <span class="daily-nav-badge" id="dailyMineBadge">0</span>
       </div>
       <div class="daily-nav-item" data-daily-tab="roster" onclick="switchDailyTab('roster')">
@@ -4032,6 +4159,82 @@
         <button class="btn btn-secondary" onclick="closeDailyEditor()">取消</button>
         <button class="btn btn-secondary" onclick="saveDailyReport('draft')">存为草稿</button>
         <button class="btn btn-primary" onclick="saveDailyReport('submitted')">提交日报</button>
+      </div>
+    </div>
+  </div>
+  <!-- 高光事迹编辑弹窗 -->
+  <div class="daily-editor-overlay hidden" id="highlightEditorOverlay">
+    <div class="daily-editor" style="max-width:520px;">
+      <div class="daily-editor-header">
+        <span class="daily-editor-title" id="highlightEditorTitle">添加高光事迹</span>
+        <button class="modal-close" onclick="closeHighlightEditor()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="daily-editor-body">
+        <div class="daily-form-group">
+          <div class="daily-form-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            发生日期
+          </div>
+          <input type="date" class="daily-form-input" id="highlightDateInput" />
+        </div>
+        <div class="daily-form-group">
+          <div class="daily-form-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            事迹标题
+          </div>
+          <input type="text" class="daily-form-input" id="highlightTitleInput" placeholder="例如：主导完成XX项目上线" />
+        </div>
+        <div class="daily-form-group">
+          <div class="daily-form-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            详细描述
+          </div>
+          <textarea class="daily-form-textarea" id="highlightContentInput" placeholder="描述该高光事迹的背景、过程、成果与影响..." rows="5"></textarea>
+        </div>
+      </div>
+      <div class="daily-editor-footer">
+        <button class="btn btn-secondary" onclick="closeHighlightEditor()">取消</button>
+        <button class="btn btn-primary" onclick="saveHighlight()">保存</button>
+      </div>
+    </div>
+  </div>
+  <!-- 寄语编辑弹窗 -->
+  <div class="daily-editor-overlay hidden" id="messageEditorOverlay">
+    <div class="daily-editor" style="max-width:520px;">
+      <div class="daily-editor-header">
+        <span class="daily-editor-title" id="messageEditorTitle">添加寄语</span>
+        <button class="modal-close" onclick="closeMessageEditor()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="daily-editor-body">
+        <div class="daily-form-group">
+          <div class="daily-form-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            日期
+          </div>
+          <input type="date" class="daily-form-input" id="messageDateInput" />
+        </div>
+        <div class="daily-form-group">
+          <div class="daily-form-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            寄语标题
+          </div>
+          <input type="text" class="daily-form-input" id="messageTitleInput" placeholder="例如：感谢团队的支持与协作" />
+        </div>
+        <div class="daily-form-group">
+          <div class="daily-form-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            寄语内容
+          </div>
+          <textarea class="daily-form-textarea" id="messageContentInput" placeholder="写下想对TA说的寄语、感谢或鼓励..." rows="5"></textarea>
+        </div>
+      </div>
+      <div class="daily-editor-footer">
+        <button class="btn btn-secondary" onclick="closeMessageEditor()">取消</button>
+        <button class="btn btn-primary" onclick="saveMessage()">保存</button>
       </div>
     </div>
   </div>
@@ -4129,6 +4332,9 @@ function showToast(message, type = 'info') {
 
 const DAILY_STORAGE_KEY = 'resourceHub_dailyReports';
 const DAILY_SETTINGS_KEY = 'resourceHub_dailySettings';
+const DAILY_HIGHLIGHTS_KEY = 'resourceHub_dailyHighlights';
+const DAILY_MESSAGES_KEY = 'resourceHub_dailyMessages';
+const DAILY_RATINGS_KEY = 'resourceHub_memberRatings';
 
 const DAILY_DEPARTMENTS = [
   { id: 'tech', name: '技术部', color: '#22d3ee', icon: '💻' },
@@ -4153,16 +4359,31 @@ const DAILY_MEMBERS = [
 
 // --- Daily Report State ---
 let dailyReports = [];
+let dailyHighlights = [];
+let dailyMessages = [];
+let highlightEditingId = null;
+let messageEditingId = null;
 let dailyEditingId = null;
 let dailyDetailId = null;
-let dailyCurrentTab = 'workbench';  // workbench | mine | list | calendar | stats | roster | tasks
+let dailyCurrentTab = 'mine';  // mine | list | calendar | stats | roster | tasks
 let dailySearchQuery = '';
 let dailyViewMode = 'all';     // all | dept | member
 let dailyCalendarDate = new Date();
 let dailyMinePage = 0;          // 0-indexed page for 我的日报 pagination
 let dailyViewingUser = null;    // null = current user; otherwise viewing someone else's reports
-let dailyHomeTab = 'daily';     // daily | highlights | message | profile (我的主页子标签)
+let dailyHomeTab = 'tasks';     // tasks | daily | highlights | message | profile (我的主页子标签)
 let wbTab = 'mine';            // mine | system | created | following | completed
+
+// --- Member Ratings (6-dimension evaluation) ---
+const RATING_DIMENSIONS = [
+  { key: 'skill', label: '技能' },
+  { key: 'communication', label: '沟通' },
+  { key: 'intelligence', label: '才智' },
+  { key: 'integrity', label: '正直' },
+  { key: 'resilience', label: '韧性' },
+  { key: 'passion', label: '激情' }
+];
+let memberRatings = {};  // { [rateeName]: { [raterName]: { skill, communication, intelligence, integrity, resilience, passion } } }
 
 // --- Daily Report Helpers ---
 function getCurrentUser() {
@@ -4207,6 +4428,98 @@ function saveDailyReports() {
   try {
     localStorage.setItem(DAILY_STORAGE_KEY, JSON.stringify(dailyReports));
   } catch (e) {}
+}
+
+function loadDailyHighlights() {
+  try {
+    const data = localStorage.getItem(DAILY_HIGHLIGHTS_KEY);
+    dailyHighlights = data ? JSON.parse(data) : [];
+  } catch (e) {
+    dailyHighlights = [];
+  }
+}
+
+function saveDailyHighlights() {
+  try {
+    localStorage.setItem(DAILY_HIGHLIGHTS_KEY, JSON.stringify(dailyHighlights));
+  } catch (e) {}
+}
+
+function loadDailyMessages() {
+  try {
+    const data = localStorage.getItem(DAILY_MESSAGES_KEY);
+    dailyMessages = data ? JSON.parse(data) : [];
+  } catch (e) {
+    dailyMessages = [];
+  }
+}
+
+function saveDailyMessages() {
+  try {
+    localStorage.setItem(DAILY_MESSAGES_KEY, JSON.stringify(dailyMessages));
+  } catch (e) {}
+}
+
+function loadMemberRatings() {
+  try {
+    const data = localStorage.getItem(DAILY_RATINGS_KEY);
+    memberRatings = data ? JSON.parse(data) : {};
+  } catch (e) {
+    memberRatings = {};
+  }
+}
+
+function saveMemberRatings() {
+  try {
+    localStorage.setItem(DAILY_RATINGS_KEY, JSON.stringify(memberRatings));
+  } catch (e) {}
+}
+
+// Get current user's rating for a ratee on a dimension (0 = not rated)
+function getMyRating(rateeName, dimKey) {
+  const me = getCurrentUser();
+  if (memberRatings[rateeName] && memberRatings[rateeName][me]) {
+    return memberRatings[rateeName][me][dimKey] || 0;
+  }
+  return 0;
+}
+
+// Save current user's rating for a ratee on a dimension
+function setMyRating(rateeName, dimKey, stars) {
+  const me = getCurrentUser();
+  if (!memberRatings[rateeName]) memberRatings[rateeName] = {};
+  if (!memberRatings[rateeName][me]) memberRatings[rateeName][me] = {};
+  memberRatings[rateeName][me][dimKey] = stars;
+  saveMemberRatings();
+}
+
+// Compute average stars for a ratee on a dimension across all raters
+function getAvgStars(rateeName, dimKey) {
+  const ratee = memberRatings[rateeName];
+  if (!ratee) return 0;
+  const values = Object.values(ratee).map(r => r[dimKey] || 0).filter(v => v > 0);
+  if (values.length === 0) return 0;
+  return values.reduce((s, v) => s + v, 0) / values.length;
+}
+
+// Score = average stars * 2 (range 0-10)
+function getDimScore(rateeName, dimKey) {
+  return getAvgStars(rateeName, dimKey) * 2;
+}
+
+// Get overall average score across all 6 dimensions
+function getOverallScore(rateeName) {
+  const scores = RATING_DIMENSIONS.map(d => getDimScore(rateeName, d.key));
+  const valid = scores.filter(s => s > 0);
+  if (valid.length === 0) return 0;
+  return valid.reduce((s, v) => s + v, 0) / valid.length;
+}
+
+// Count how many raters have rated this person
+function getRaterCount(rateeName) {
+  const ratee = memberRatings[rateeName];
+  if (!ratee) return 0;
+  return Object.keys(ratee).length;
 }
 
 function getDailySettings() {
@@ -4269,7 +4582,7 @@ function switchDailyTab(tab) {
   dailyDetailId = null;
   dailyMinePage = 0;
   dailyViewingUser = null;
-  dailyHomeTab = 'daily';
+  dailyHomeTab = 'tasks';
   document.querySelectorAll('.daily-nav-item').forEach(item => {
     item.classList.toggle('active', item.dataset.dailyTab === tab);
   });
@@ -4323,9 +4636,7 @@ function renderDailyContent() {
     content.innerHTML = renderDailyDetail();
     return;
   }
-  if (dailyCurrentTab === 'workbench') {
-    content.innerHTML = renderWorkbench();
-  } else if (dailyCurrentTab === 'mine') {
+  if (dailyCurrentTab === 'mine') {
     content.innerHTML = renderDailyMine();
   } else if (dailyCurrentTab === 'list') {
     content.innerHTML = renderDailyList();
@@ -4340,7 +4651,12 @@ function renderDailyContent() {
   }
 }
 
-function renderWorkbench() {
+function renderWorkbench(targetName) {
+  targetName = targetName || getCurrentUser();
+  const isSelfView = targetName === getCurrentUser();
+  const tsUser = dailyNameToTsMember(targetName);
+  const tsUserId = tsUser ? tsUser.id : null;
+
   const today = new Date();
   const todayStr = today.toISOString().slice(0, 10);
   const dayOfWeek = today.getDay();
@@ -4349,7 +4665,7 @@ function renderWorkbench() {
   const isMonthStart = dayOfMonth <= 5;
   const isMonthEnd = dayOfMonth >= 25;
 
-  const me = getCurrentUser();
+  const me = targetName;
   const myReports = dailyReports.filter(r => r.author === me);
   const todayReport = myReports.find(r => r.date === todayStr);
 
@@ -4373,11 +4689,11 @@ function renderWorkbench() {
   // --- Workbench tabs task data ---
   loadTsData();
   const wbFilters = {
-    mine: () => tsTasks.filter(t => t.assigneeIds.includes(TS_CURRENT_USER.id) && t.status !== 'done'),
-    system: () => tsTasks.filter(t => t.createdBy !== TS_CURRENT_USER.id && t.assigneeIds.includes(TS_CURRENT_USER.id) && t.status !== 'done'),
-    created: () => tsTasks.filter(t => t.createdBy === TS_CURRENT_USER.id),
-    following: () => tsTasks.filter(t => t.followerIds.includes(TS_CURRENT_USER.id) && t.status !== 'done'),
-    completed: () => tsTasks.filter(t => t.assigneeIds.includes(TS_CURRENT_USER.id) && t.status === 'done'),
+    mine: () => tsUserId ? tsTasks.filter(t => t.assigneeIds.includes(tsUserId) && t.status !== 'done') : [],
+    system: () => tsUserId ? tsTasks.filter(t => t.createdBy !== tsUserId && t.assigneeIds.includes(tsUserId) && t.status !== 'done') : [],
+    created: () => tsUserId ? tsTasks.filter(t => t.createdBy === tsUserId) : [],
+    following: () => tsUserId ? tsTasks.filter(t => t.followerIds.includes(tsUserId) && t.status !== 'done') : [],
+    completed: () => tsUserId ? tsTasks.filter(t => t.assigneeIds.includes(tsUserId) && t.status === 'done') : [],
   };
   const wbCounts = {
     mine: wbFilters.mine().length,
@@ -4395,13 +4711,6 @@ function renderWorkbench() {
   ];
 
   let html = `
-    <div class="daily-toolbar">
-      <div class="daily-toolbar-left">
-        <span class="daily-toolbar-title">工作台</span>
-        <span style="font-size:12px; color:var(--text-tertiary);">${today.getFullYear()}年${today.getMonth()+1}月${today.getDate()}日 ${['日','一','二','三','四','五','六'][dayOfWeek]}</span>
-      </div>
-    </div>
-
     <div class="wb-tabs">
       ${wbTabLabels.map(t => `
         <div class="wb-tab ${wbTab === t.key ? 'active' : ''}" onclick="switchWbTab('${t.key}')">
@@ -4474,9 +4783,9 @@ function renderWorkbench() {
     recentMissing.filter(d => d !== todayStr).forEach(d => unfilledReports.push({ date: d, label: d + ' 日报' }));
 
     // 3. 任务清单中负责人为我且未完成的任务（自己创建、分配给自己、未完成）
-    const myListTasks = sortTasks(tsTasks.filter(t =>
-      t.assigneeIds.includes(TS_CURRENT_USER.id) && t.status !== 'done' && t.createdBy === TS_CURRENT_USER.id
-    ));
+    const myListTasks = sortTasks(tsUserId ? tsTasks.filter(t =>
+      t.assigneeIds.includes(tsUserId) && t.status !== 'done' && t.createdBy === tsUserId
+    ) : []);
 
     let sectionCount = 0;
 
@@ -4500,9 +4809,9 @@ function renderWorkbench() {
           <div class="daily-report-list">
             ${unfilledReports.map(r => {
               const dt = formatDate(r.date);
-              const editable = isEditable(r.date);
+              const canEdit = isSelfView && isEditable(r.date);
               return `
-                <div class="daily-report-card is-missing${editable ? '' : ' is-expired'}"${editable ? ` onclick="openDailyEditorForDate('${r.date}')"` : ''}>
+                <div class="daily-report-card is-missing${canEdit ? '' : ' is-expired'}"${canEdit ? ` onclick="openDailyEditorForDate('${r.date}')"` : ''}>
                   <div class="daily-report-date-block">
                     <div class="daily-report-date-day">${dt.day}</div>
                     <div class="daily-report-date-month">${dt.month}</div>
@@ -4513,9 +4822,9 @@ function renderWorkbench() {
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                       ${r.date === todayStr ? '今日日报未填写' : dt.full + ' 未填写'}
                     </div>
-                    <div class="daily-report-missing-desc">${editable ? '该工作日未提交日报，点击补充填写' : '已超过补写期限（超过3天）'}</div>
+                    <div class="daily-report-missing-desc">${canEdit ? '该工作日未提交日报，点击补充填写' : (isSelfView ? '已超过补写期限（超过3天）' : '仅可查看，无法代填写')}</div>
                   </div>
-                  ${editable ? `<div class="daily-report-actions" onclick="event.stopPropagation()">
+                  ${canEdit ? `<div class="daily-report-actions" onclick="event.stopPropagation()">
                     <button onclick="openDailyEditorForDate('${r.date}')" title="补写日报">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                       补写
@@ -4575,118 +4884,120 @@ function renderWorkbench() {
           ${weekReportDone ? '已完成' : '待完成'}
         </div>
       </div>
-      ${!weekReportDone ? `
+      ${!weekReportDone && isSelfView ? `
         <div class="workbench-card-actions">
-          <button class="btn btn-primary btn-sm" onclick="switchDailyTab('mine')">去填写日报</button>
+          <button class="btn btn-primary btn-sm" onclick="setDailyHomeTab('daily')">去填写日报</button>
         </div>
       ` : ''}
     </div>
   `;
 
-  // 2. 为下属日报打分
-  const allTodayReports = dailyReports.filter(r =>
-    r.date === todayStr && r.author !== me && r.status === 'submitted'
-  );
-  const unscored = allTodayReports.filter(r => !r.scoredBy || !r.scoredBy.includes(me));
-  const scoringDone = allTodayReports.length > 0 && unscored.length === 0;
-  const noReportsToScore = allTodayReports.length === 0;
+  if (isSelfView) {
+    // 2. 为下属日报打分
+    const allTodayReports = dailyReports.filter(r =>
+      r.date === todayStr && r.author !== me && r.status === 'submitted'
+    );
+    const unscored = allTodayReports.filter(r => !r.scoredBy || !r.scoredBy.includes(me));
+    const scoringDone = allTodayReports.length > 0 && unscored.length === 0;
+    const noReportsToScore = allTodayReports.length === 0;
 
-  html += `
-    <div class="workbench-card ${scoringDone || noReportsToScore ? 'workbench-card-done' : ''}">
-      <div class="workbench-card-header">
-        <div class="workbench-card-icon ${scoringDone || noReportsToScore ? 'done' : 'danger'}">
-          ${scoringDone ? '✅' : noReportsToScore ? '💤' : '⭐'}
-        </div>
-        <div class="workbench-card-info">
-          <div class="workbench-card-title">为下属日报打分</div>
-          <div class="workbench-card-desc">
-            ${noReportsToScore
-              ? '今日暂无需要打分的下属日报'
-              : scoringDone
-                ? '今日所有下属日报已完成打分'
-                : '今日有 ' + unscored.length + ' 篇下属日报待打分（共 ' + allTodayReports.length + ' 篇）'}
+    html += `
+      <div class="workbench-card ${scoringDone || noReportsToScore ? 'workbench-card-done' : ''}">
+        <div class="workbench-card-header">
+          <div class="workbench-card-icon ${scoringDone || noReportsToScore ? 'done' : 'danger'}">
+            ${scoringDone ? '✅' : noReportsToScore ? '💤' : '⭐'}
+          </div>
+          <div class="workbench-card-info">
+            <div class="workbench-card-title">为下属日报打分</div>
+            <div class="workbench-card-desc">
+              ${noReportsToScore
+                ? '今日暂无需要打分的下属日报'
+                : scoringDone
+                  ? '今日所有下属日报已完成打分'
+                  : '今日有 ' + unscored.length + ' 篇下属日报待打分（共 ' + allTodayReports.length + ' 篇）'}
+            </div>
+          </div>
+          <div class="workbench-card-status ${scoringDone || noReportsToScore ? 'status-done' : 'status-urgent'}">
+            ${noReportsToScore ? '无需处理' : scoringDone ? '已完成' : '待处理'}
           </div>
         </div>
-        <div class="workbench-card-status ${scoringDone || noReportsToScore ? 'status-done' : 'status-urgent'}">
-          ${noReportsToScore ? '无需处理' : scoringDone ? '已完成' : '待处理'}
-        </div>
-      </div>
-      ${unscored.length > 0 ? `
-        <div class="workbench-card-body">
-          ${unscored.map(r => {
-            const member = DAILY_MEMBERS.find(m => m.name === r.author);
-            const dept = DAILY_DEPARTMENTS.find(d => d.id === member?.dept);
-            return `
-              <div class="workbench-sub-item" onclick="viewDailyReport('${r.id}')">
-                <div style="width:28px; height:28px; border-radius:50%; background:${dept?.color || '#888'}22; color:${dept?.color || '#888'}; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0;">${escapeHtml(r.author.charAt(0))}</div>
-                <div style="flex:1;">
-                  <div style="font-size:13px; color:var(--text-primary); font-weight:500;">${escapeHtml(r.author)}</div>
-                  <div style="font-size:11px; color:var(--text-tertiary);">${r.tasks.length}个任务 · ${r.tasks.reduce((s,t) => s + getTaskPersonDays(t), 0).toFixed(1)}人天</div>
+        ${unscored.length > 0 ? `
+          <div class="workbench-card-body">
+            ${unscored.map(r => {
+              const member = DAILY_MEMBERS.find(m => m.name === r.author);
+              const dept = DAILY_DEPARTMENTS.find(d => d.id === member?.dept);
+              return `
+                <div class="workbench-sub-item" onclick="viewDailyReport('${r.id}')">
+                  <div style="width:28px; height:28px; border-radius:50%; background:${dept?.color || '#888'}22; color:${dept?.color || '#888'}; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0;">${escapeHtml(r.author.charAt(0))}</div>
+                  <div style="flex:1;">
+                    <div style="font-size:13px; color:var(--text-primary); font-weight:500;">${escapeHtml(r.author)}</div>
+                    <div style="font-size:11px; color:var(--text-tertiary);">${r.tasks.length}个任务 · ${r.tasks.reduce((s,t) => s + getTaskPersonDays(t), 0).toFixed(1)}人天</div>
+                  </div>
+                  <button class="btn btn-sm" style="background:var(--accent); color:#000; border:none;" onclick="event.stopPropagation(); scoreReport('${r.id}')">打分</button>
                 </div>
-                <button class="btn btn-sm" style="background:var(--accent); color:#000; border:none;" onclick="event.stopPropagation(); scoreReport('${r.id}')">打分</button>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      ` : ''}
-    </div>
-  `;
+              `;
+            }).join('')}
+          </div>
+        ` : ''}
+      </div>
+    `;
 
-  // 3. 每月下属绩效填写提醒
-  const performanceDone = false; // 演示：未完成
-  html += `
-    <div class="workbench-card ${performanceDone ? 'workbench-card-done' : ''}">
-      <div class="workbench-card-header">
-        <div class="workbench-card-icon ${performanceDone ? 'done' : 'info'}">
-          ${performanceDone ? '✅' : '📊'}
-        </div>
-        <div class="workbench-card-info">
-          <div class="workbench-card-title">下属绩效填写</div>
-          <div class="workbench-card-desc">
-            ${performanceDone
-              ? '本月绩效已全部填写完成'
-              : '每月一次 — 本月需对 ' + subordinates.length + ' 名下属进行绩效评估，请在月底前完成'}
+    // 3. 每月下属绩效填写提醒
+    const performanceDone = false; // 演示：未完成
+    html += `
+      <div class="workbench-card ${performanceDone ? 'workbench-card-done' : ''}">
+        <div class="workbench-card-header">
+          <div class="workbench-card-icon ${performanceDone ? 'done' : 'info'}">
+            ${performanceDone ? '✅' : '📊'}
+          </div>
+          <div class="workbench-card-info">
+            <div class="workbench-card-title">下属绩效填写</div>
+            <div class="workbench-card-desc">
+              ${performanceDone
+                ? '本月绩效已全部填写完成'
+                : '每月一次 — 本月需对 ' + subordinates.length + ' 名下属进行绩效评估，请在月底前完成'}
+            </div>
+          </div>
+          <div class="workbench-card-status ${performanceDone ? 'status-done' : 'status-info'}">
+            ${performanceDone ? '已完成' : '月度任务'}
           </div>
         </div>
-        <div class="workbench-card-status ${performanceDone ? 'status-done' : 'status-info'}">
-          ${performanceDone ? '已完成' : '月度任务'}
-        </div>
+        ${!performanceDone ? `
+          <div class="workbench-card-actions">
+            <button class="btn btn-sm" style="background:var(--bg-elevated); color:var(--text-primary);" onclick="switchDailyTab('roster')">前往员工名册</button>
+          </div>
+        ` : ''}
       </div>
-      ${!performanceDone ? `
-        <div class="workbench-card-actions">
-          <button class="btn btn-sm" style="background:var(--bg-elevated); color:var(--text-primary);" onclick="switchDailyTab('roster')">前往员工名册</button>
-        </div>
-      ` : ''}
-    </div>
-  `;
+    `;
 
-  // 4. 每月下属员工排序提醒
-  const rankingDone = false; // 演示：未完成
-  html += `
-    <div class="workbench-card ${rankingDone ? 'workbench-card-done' : ''}">
-      <div class="workbench-card-header">
-        <div class="workbench-card-icon ${rankingDone ? 'done' : 'info'}">
-          ${rankingDone ? '✅' : '🔢'}
-        </div>
-        <div class="workbench-card-info">
-          <div class="workbench-card-title">下属员工排序</div>
-          <div class="workbench-card-desc">
-            ${rankingDone
-              ? '本月员工排序已完成'
-              : '每月一次 — 本月需对下属员工进行排序评估，请在月底前完成'}
+    // 4. 每月下属员工排序提醒
+    const rankingDone = false; // 演示：未完成
+    html += `
+      <div class="workbench-card ${rankingDone ? 'workbench-card-done' : ''}">
+        <div class="workbench-card-header">
+          <div class="workbench-card-icon ${rankingDone ? 'done' : 'info'}">
+            ${rankingDone ? '✅' : '🔢'}
+          </div>
+          <div class="workbench-card-info">
+            <div class="workbench-card-title">下属员工排序</div>
+            <div class="workbench-card-desc">
+              ${rankingDone
+                ? '本月员工排序已完成'
+                : '每月一次 — 本月需对下属员工进行排序评估，请在月底前完成'}
+            </div>
+          </div>
+          <div class="workbench-card-status ${rankingDone ? 'status-done' : 'status-info'}">
+            ${rankingDone ? '已完成' : '月度任务'}
           </div>
         </div>
-        <div class="workbench-card-status ${rankingDone ? 'status-done' : 'status-info'}">
-          ${rankingDone ? '已完成' : '月度任务'}
-        </div>
+        ${!rankingDone ? `
+          <div class="workbench-card-actions">
+            <button class="btn btn-sm" style="background:var(--bg-elevated); color:var(--text-primary);" onclick="switchDailyTab('roster')">前往员工名册</button>
+          </div>
+        ` : ''}
       </div>
-      ${!rankingDone ? `
-        <div class="workbench-card-actions">
-          <button class="btn btn-sm" style="background:var(--bg-elevated); color:var(--text-primary);" onclick="switchDailyTab('roster')">前往员工名册</button>
-        </div>
-      ` : ''}
-    </div>
-  `;
+    `;
+  }
 
   html += `</div>`;
   return html;
@@ -4900,6 +5211,21 @@ function getRelDate(offset) {
 function getTsPriority(key) { return TS_PRIORITIES.find(p => p.key === key) || TS_PRIORITIES[3]; }
 function getTsStatus(key) { return TS_STATUSES.find(s => s.key === key) || TS_STATUSES[0]; }
 function getTsMember(id) { return TS_MEMBERS.find(m => m.id === id) || { id, name: id, color: '#94a3b8' }; }
+
+// Map a daily-report member name to the task-system member object.
+// Current user ('好奇') maps to TS_CURRENT_USER (u0).
+// Other members: try exact name match first, then fall back to index order.
+function dailyNameToTsMember(name) {
+  if (name === getCurrentUser()) return TS_CURRENT_USER;
+  const direct = TS_MEMBERS.find(m => m.name === name);
+  if (direct) return direct;
+  const others = DAILY_MEMBERS.filter(m => m.name !== getCurrentUser());
+  const idx = others.findIndex(m => m.name === name);
+  const tsOthers = TS_MEMBERS.filter(m => m.id !== TS_CURRENT_USER.id);
+  if (idx >= 0 && idx < tsOthers.length) return tsOthers[idx];
+  return null;
+}
+
 function getTsTag(key) { return TS_TAG_DEFS.find(t => t.key === key) || { key, label: key, color: '#94a3b8' }; }
 
 function isTsOverdue(task) {
@@ -6891,10 +7217,11 @@ function renderDailyMine() {
     <div class="daily-toolbar">
       <div class="daily-toolbar-left">
         ${!isSelf ? `<button class="daily-back-btn" onclick="closeUserProfile()" title="返回员工名册"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button>` : ''}
-        <span class="daily-toolbar-title">${isSelf ? '我的主页' : escapeHtml(viewingAs) + ' 的主页'}</span>
+        <span class="daily-toolbar-title">${isSelf ? '我的' : escapeHtml(viewingAs) + ' 的主页'}</span>
       </div>
       <div class="daily-toolbar-right">
         <div class="home-toggle-group">
+          <button class="home-toggle-btn ${dailyHomeTab === 'tasks' ? 'active' : ''}" onclick="setDailyHomeTab('tasks')">任务</button>
           <button class="home-toggle-btn ${dailyHomeTab === 'daily' ? 'active' : ''}" onclick="setDailyHomeTab('daily')">日报</button>
           <button class="home-toggle-btn ${dailyHomeTab === 'highlights' ? 'active' : ''}" onclick="setDailyHomeTab('highlights')">高光</button>
           <button class="home-toggle-btn ${dailyHomeTab === 'message' ? 'active' : ''}" onclick="setDailyHomeTab('message')">寄语</button>
@@ -6905,6 +7232,10 @@ function renderDailyMine() {
   `;
 
   // --- Branch content by home sub-tab ---
+  if (dailyHomeTab === 'tasks') {
+    html += renderWorkbench(viewingAs);
+    return html;
+  }
   if (dailyHomeTab === 'highlights') {
     html += renderHomeHighlights(myReports, viewingAs, isSelf);
     return html;
@@ -7092,124 +7423,399 @@ function renderDailyMine() {
 
 // --- 我的主页：高光 tab ---
 function renderHomeHighlights(myReports, viewingAs, isSelf) {
-  const submitted = myReports.filter(r => r.status === 'submitted');
-  const topReports = [...submitted].sort((a, b) => (b.score || 85) - (a.score || 85)).slice(0, 5);
+  const highlights = dailyHighlights
+    .filter(h => h.recipient === viewingAs)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   let html = '<div class="home-highlights">';
 
-  if (topReports.length === 0) {
-    html += `
-      <div class="daily-empty">
-        <div class="daily-empty-icon">🌟</div>
-        <div class="daily-empty-text">${isSelf ? '暂无高光时刻，提交更多日报来记录你的成就吧' : escapeHtml(viewingAs) + ' 暂无高光记录'}</div>
-      </div>
-    `;
-    return html + '</div>';
-  }
-
-  const totalTasks = myReports.flatMap(r => r.tasks).length;
-  const doneTasks = myReports.flatMap(r => r.tasks).filter(t => parseInt(t.progress) >= 100).length;
-  const bestScore = topReports.length > 0 ? Math.max(...topReports.map(r => r.score || 85)) : 0;
-
   html += `
-    <div class="home-highlight-stats">
-      <div class="home-highlight-stat">
-        <div class="home-highlight-stat-value" style="color:var(--success);">${doneTasks}</div>
-        <div class="home-highlight-stat-label">已完成任务</div>
+    <div class="home-highlights-header">
+      <div class="home-highlights-header-info">
+        <span style="font-size:20px;">🏆</span>
+        <span class="home-highlights-header-title">高光事迹</span>
+        <span class="home-highlights-header-count">${highlights.length} 条</span>
       </div>
-      <div class="home-highlight-stat">
-        <div class="home-highlight-stat-value" style="color:var(--accent);">${topReports.length}</div>
-        <div class="home-highlight-stat-label">高光日报</div>
-      </div>
-      <div class="home-highlight-stat">
-        <div class="home-highlight-stat-value" style="color:var(--purple);">${bestScore}</div>
-        <div class="home-highlight-stat-label">最高评分</div>
-      </div>
-      <div class="home-highlight-stat">
-        <div class="home-highlight-stat-value" style="color:var(--warning);">${totalTasks}</div>
-        <div class="home-highlight-stat-label">累计任务</div>
-      </div>
-    </div>
-    <div class="home-section-title">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      高光日报
+      <button class="btn btn-primary btn-sm" onclick="openHighlightEditor('${escapeHtml(viewingAs)}')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        添加高光
+      </button>
     </div>
   `;
 
-  topReports.forEach(r => {
-    const dt = formatDate(r.date);
-    const doneTasks = r.tasks.filter(t => parseInt(t.progress) >= 100).length;
+  if (highlights.length === 0) {
     html += `
-      <div class="home-highlight-card" onclick="openDailyDetail('${r.id}')">
-        <div class="home-highlight-card-header">
-          <div class="home-highlight-date">
-            <span class="home-highlight-day">${dt.day}</span>
-            <span class="home-highlight-month">${dt.month}</span>
-          </div>
-          <div class="home-highlight-card-title">
-            <div style="font-size:14px; font-weight:600; color:var(--text-primary);">${dt.full} ${dt.weekday}</div>
-            <div style="font-size:12px; color:var(--text-tertiary); margin-top:2px;">${r.tasks.length}个任务 · ${doneTasks}个已完成</div>
-          </div>
-          <div class="home-highlight-score" style="${(r.score || 85) >= 90 ? 'color:var(--success);' : (r.score || 85) >= 80 ? 'color:var(--warning);' : 'color:var(--text-tertiary);'}">${r.score || 85}<span style="font-size:11px;">分</span></div>
-        </div>
-        ${r.tasks.filter(t => parseInt(t.progress) >= 100).length > 0 ? `
-          <div class="home-highlight-tasks">
-            ${r.tasks.filter(t => parseInt(t.progress) >= 100).slice(0, 3).map(t => `<span class="home-highlight-task-tag">✅ ${escapeHtml(t.name)}</span>`).join('')}
-          </div>
-        ` : ''}
-        ${r.notes && r.notes.trim() ? `<div class="home-highlight-note">"${escapeHtml(r.notes.slice(0, 80))}${r.notes.length > 80 ? '...' : ''}"</div>` : ''}
+      <div class="home-highlights-empty">
+        <div class="home-highlights-empty-icon">🏆</div>
+        <div class="home-highlights-empty-title">暂无高光记录</div>
+        <div class="home-highlights-empty-desc">由上级管理员手动填写员工的高光事迹与表彰记录</div>
       </div>
     `;
-  });
+  } else {
+    html += '<div class="home-highlight-list">';
+    highlights.forEach(h => {
+      const dt = formatDate(h.date);
+      const canEdit = h.createdBy === getCurrentUser();
+      html += `
+        <div class="home-highlight-record">
+          <div class="home-highlight-record-date">
+            <span class="home-highlight-record-day">${dt.day}</span>
+            <span class="home-highlight-record-month">${dt.month}</span>
+          </div>
+          <div class="home-highlight-record-body">
+            <div class="home-highlight-record-title">${escapeHtml(h.title)}</div>
+            <div class="home-highlight-record-content">${escapeHtml(h.content)}</div>
+            <div class="home-highlight-record-meta">
+              <span>📅 ${dt.full} ${dt.weekday}</span>
+              <span>✍️ 由 ${escapeHtml(h.createdBy)} 填写</span>
+            </div>
+          </div>
+          <div class="home-highlight-record-actions">
+            <button class="home-like-btn ${(h.likes || []).includes(getCurrentUser()) ? 'liked' : ''}" onclick="toggleHighlightLike('${h.id}')" title="点赞">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="${(h.likes || []).includes(getCurrentUser()) ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span>${(h.likes || []).length}</span>
+            </button>
+            ${canEdit ? `<button onclick="openHighlightEditor('${escapeHtml(viewingAs)}', '${h.id}')" title="编辑">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button onclick="deleteHighlight('${h.id}')" title="删除">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>` : ''}
+          </div>
+        </div>
+      `;
+    });
+    html += '</div>';
+  }
 
   html += '</div>';
   return html;
 }
 
-// --- 我的主页：寄语 tab ---
-function renderHomeMessage(myReports, viewingAs, isSelf) {
-  const notesList = myReports
-    .filter(r => r.notes && r.notes.trim())
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+// --- 高光事迹：弹窗操作 ---
+let highlightRecipient = '';
 
-  let html = '<div class="home-message">';
+function openHighlightEditor(recipient, id) {
+  highlightRecipient = recipient;
+  highlightEditingId = id || null;
+  const titleEl = document.getElementById('highlightEditorTitle');
+  const dateEl = document.getElementById('highlightDateInput');
+  const titleInput = document.getElementById('highlightTitleInput');
+  const contentInput = document.getElementById('highlightContentInput');
 
-  if (notesList.length === 0) {
-    html += `
-      <div class="daily-empty">
-        <div class="daily-empty-icon">💌</div>
-        <div class="daily-empty-text">${isSelf ? '还没有留下寄语，在日报的"个人心得"中记录你的思考吧' : escapeHtml(viewingAs) + ' 暂无寄语'}</div>
-      </div>
-    `;
-    return html + '</div>';
+  if (highlightEditingId) {
+    const h = dailyHighlights.find(x => x.id === highlightEditingId);
+    if (h) {
+      titleEl.textContent = '编辑高光事迹';
+      dateEl.value = h.date;
+      titleInput.value = h.title;
+      contentInput.value = h.content;
+    }
+  } else {
+    titleEl.textContent = '添加高光事迹';
+    dateEl.value = todayStr();
+    titleInput.value = '';
+    contentInput.value = '';
+  }
+  document.getElementById('highlightEditorOverlay').classList.remove('hidden');
+}
+
+function closeHighlightEditor() {
+  document.getElementById('highlightEditorOverlay').classList.add('hidden');
+  highlightEditingId = null;
+}
+
+function saveHighlight() {
+  const date = document.getElementById('highlightDateInput').value;
+  const title = document.getElementById('highlightTitleInput').value.trim();
+  const content = document.getElementById('highlightContentInput').value.trim();
+
+  if (!date) { showToast('请选择发生日期', 'error'); return; }
+  if (!title) { showToast('请填写事迹标题', 'error'); return; }
+  if (!content) { showToast('请填写详细描述', 'error'); return; }
+
+  if (highlightEditingId) {
+    // 仅更新允许编辑的字段，保留 recipient / createdBy / createdAt
+    const idx = dailyHighlights.findIndex(h => h.id === highlightEditingId);
+    if (idx >= 0) {
+      dailyHighlights[idx] = {
+        ...dailyHighlights[idx],
+        title,
+        content,
+        date,
+        updatedAt: Date.now()
+      };
+    }
+    showToast('高光事迹已更新', 'success');
+  } else {
+    const record = {
+      id: 'hl-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
+      recipient: highlightRecipient,
+      title,
+      content,
+      date,
+      createdBy: getCurrentUser(),
+      createdAt: Date.now(),
+      likes: []
+    };
+    dailyHighlights.push(record);
+    showToast('高光事迹已添加', 'success');
   }
 
+  saveDailyHighlights();
+  closeHighlightEditor();
+  renderDailyContent();
+}
+
+function deleteHighlight(id) {
+  if (!confirm('确认删除该高光事迹？')) return;
+  dailyHighlights = dailyHighlights.filter(h => h.id !== id);
+  saveDailyHighlights();
+  showToast('高光事迹已删除', 'success');
+  renderDailyContent();
+}
+
+// --- 高光事迹：点赞 ---
+function toggleHighlightLike(id) {
+  const h = dailyHighlights.find(x => x.id === id);
+  if (!h) return;
+  if (!h.likes) h.likes = [];
+  const me = getCurrentUser();
+  const idx = h.likes.indexOf(me);
+  if (idx >= 0) {
+    h.likes.splice(idx, 1);
+    showToast('已取消点赞', 'info');
+  } else {
+    h.likes.push(me);
+    showToast('点赞成功', 'success');
+  }
+  saveDailyHighlights();
+  renderDailyContent();
+}
+
+// --- 寄语：弹窗操作 ---
+let messageRecipient = '';
+
+function openMessageEditor(recipient, id) {
+  messageRecipient = recipient;
+  messageEditingId = id || null;
+  const titleEl = document.getElementById('messageEditorTitle');
+  const dateEl = document.getElementById('messageDateInput');
+  const titleInput = document.getElementById('messageTitleInput');
+  const contentInput = document.getElementById('messageContentInput');
+
+  if (messageEditingId) {
+    const m = dailyMessages.find(x => x.id === messageEditingId);
+    if (m) {
+      titleEl.textContent = '编辑寄语';
+      dateEl.value = m.date;
+      titleInput.value = m.title;
+      contentInput.value = m.content;
+    }
+  } else {
+    titleEl.textContent = '添加寄语';
+    dateEl.value = todayStr();
+    titleInput.value = '';
+    contentInput.value = '';
+  }
+  document.getElementById('messageEditorOverlay').classList.remove('hidden');
+}
+
+function closeMessageEditor() {
+  document.getElementById('messageEditorOverlay').classList.add('hidden');
+  messageEditingId = null;
+}
+
+function saveMessage() {
+  const date = document.getElementById('messageDateInput').value;
+  const title = document.getElementById('messageTitleInput').value.trim();
+  const content = document.getElementById('messageContentInput').value.trim();
+
+  if (!date) { showToast('请选择日期', 'error'); return; }
+  if (!title) { showToast('请填写寄语标题', 'error'); return; }
+  if (!content) { showToast('请填写寄语内容', 'error'); return; }
+
+  if (messageEditingId) {
+    const idx = dailyMessages.findIndex(m => m.id === messageEditingId);
+    if (idx >= 0) {
+      dailyMessages[idx] = {
+        ...dailyMessages[idx],
+        title,
+        content,
+        date,
+        updatedAt: Date.now()
+      };
+    }
+    showToast('寄语已更新', 'success');
+  } else {
+    const record = {
+      id: 'msg-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
+      recipient: messageRecipient,
+      title,
+      content,
+      date,
+      createdBy: getCurrentUser(),
+      createdAt: Date.now(),
+      plusOnes: 0
+    };
+    dailyMessages.push(record);
+    showToast('寄语已添加', 'success');
+  }
+
+  saveDailyMessages();
+  closeMessageEditor();
+  renderDailyContent();
+}
+
+function deleteMessage(id) {
+  if (!confirm('确认删除该寄语？')) return;
+  dailyMessages = dailyMessages.filter(m => m.id !== id);
+  saveDailyMessages();
+  showToast('寄语已删除', 'success');
+  renderDailyContent();
+}
+
+function plusOneMessage(id) {
+  const m = dailyMessages.find(x => x.id === id);
+  if (!m) return;
+  m.plusOnes = (m.plusOnes || 0) + 1;
+  saveDailyMessages();
+  showToast('+1 已送出', 'success');
+  renderDailyContent();
+}
+
+// --- 我的主页：寄语 tab ---
+function renderHomeMessage(myReports, viewingAs, isSelf) {
+  const messages = dailyMessages
+    .filter(m => m.recipient === viewingAs)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  let html = '<div class="home-messages">';
+
   html += `
-    <div class="home-section-title">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      心得寄语 <span style="font-size:12px; color:var(--text-tertiary); font-weight:400;">共 ${notesList.length} 条</span>
+    <div class="home-highlights-header">
+      <div class="home-highlights-header-info">
+        <span style="font-size:20px;">💌</span>
+        <span class="home-highlights-header-title">寄语</span>
+        <span class="home-highlights-header-count">${messages.length} 条</span>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="openMessageEditor('${escapeHtml(viewingAs)}')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        添加寄语
+      </button>
     </div>
-    <div class="home-message-timeline">
   `;
 
-  notesList.forEach((r, idx) => {
-    const dt = formatDate(r.date);
+  if (messages.length === 0) {
     html += `
-      <div class="home-message-item" onclick="openDailyDetail('${r.id}')">
-        <div class="home-message-dot"></div>
-        <div class="home-message-content">
-          <div class="home-message-date">${dt.full} ${dt.weekday}</div>
-          <div class="home-message-text">${escapeHtml(r.notes)}</div>
-        </div>
+      <div class="home-highlights-empty">
+        <div class="home-highlights-empty-icon">💌</div>
+        <div class="home-highlights-empty-title">暂无寄语</div>
+        <div class="home-highlights-empty-desc">由上级或同事写下寄语、感谢与鼓励</div>
       </div>
     `;
-  });
+  } else {
+    html += '<div class="home-highlight-list">';
+    messages.forEach(m => {
+      const dt = formatDate(m.date);
+      const canEdit = m.createdBy === getCurrentUser();
+      html += `
+        <div class="home-highlight-record" style="border-left-color:var(--accent);">
+          <div class="home-highlight-record-date">
+            <span class="home-highlight-record-day">${dt.day}</span>
+            <span class="home-highlight-record-month">${dt.month}</span>
+          </div>
+          <div class="home-highlight-record-body">
+            <div class="home-highlight-record-title">${escapeHtml(m.title)}</div>
+            <div class="home-highlight-record-content">${escapeHtml(m.content)}</div>
+            <div class="home-highlight-record-meta">
+              <span>📅 ${dt.full} ${dt.weekday}</span>
+              <span>✍️ 由 ${escapeHtml(m.createdBy)} 寄语</span>
+            </div>
+          </div>
+          <div class="home-highlight-record-actions">
+            <button class="home-plusone-btn" onclick="plusOneMessage('${m.id}')" title="点赞 +1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>${m.plusOnes || 0}</span>
+            </button>
+            ${canEdit ? `<button onclick="openMessageEditor('${escapeHtml(viewingAs)}', '${m.id}')" title="编辑">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button onclick="deleteMessage('${m.id}')" title="删除">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>` : ''}
+          </div>
+        </div>
+      `;
+    });
+    html += '</div>';
+  }
 
-  html += '</div></div>';
+  html += '</div>';
   return html;
 }
 
 // --- 我的主页：个人资料 tab ---
+// Render a hexagonal radar chart SVG for the 6 rating dimensions
+function renderRatingRadar(rateeName) {
+  const cx = 130, cy = 130, maxR = 100;
+  const dims = RATING_DIMENSIONS;
+  const n = dims.length;
+  // angles: start at top (π/2), go clockwise
+  const angle = (i) => Math.PI / 2 - i * (2 * Math.PI / n);
+  const point = (r, i) => [cx + r * Math.cos(angle(i)), cy - r * Math.sin(angle(i))];
+
+  // Grid hexagons (levels 2,4,6,8,10)
+  let gridPolygons = '';
+  for (let level = 1; level <= 5; level++) {
+    const r = (level / 5) * maxR;
+    const pts = dims.map((_, i) => point(r, i).map(p => p.toFixed(1)).join(',')).join(' ');
+    gridPolygons += `<polygon points="${pts}" fill="none" stroke="var(--border-color)" stroke-width="1" opacity="${level === 5 ? 0.6 : 0.35}"/>`;
+  }
+
+  // Axis lines
+  let axes = '';
+  for (let i = 0; i < n; i++) {
+    const [x, y] = point(maxR, i);
+    axes += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--border-color)" stroke-width="1" opacity="0.35"/>`;
+  }
+
+  // Data polygon
+  const scores = dims.map(d => getDimScore(rateeName, d.key));
+  const dataPts = scores.map((s, i) => point((s / 10) * maxR, i).map(p => p.toFixed(1)).join(',')).join(' ');
+  const dataPolygon = `<polygon points="${dataPts}" fill="rgba(34,211,238,0.22)" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>`;
+  // Data points
+  let dataDots = '';
+  scores.forEach((s, i) => {
+    if (s > 0) {
+      const [x, y] = point((s / 10) * maxR, i);
+      dataDots += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.5" fill="var(--accent)" stroke="var(--bg-secondary)" stroke-width="1.5"/>`;
+    }
+  });
+
+  // Labels
+  let labels = '';
+  for (let i = 0; i < n; i++) {
+    const [lx, ly] = point(maxR + 18, i);
+    const score = scores[i];
+    const anchor = Math.abs(lx - cx) < 5 ? 'middle' : (lx > cx ? 'start' : 'end');
+    labels += `
+      <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle" font-size="12" fill="var(--text-secondary)">${dims[i].label}</text>
+      <text x="${lx.toFixed(1)}" y="${(ly + 14).toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle" font-size="11" font-weight="700" fill="var(--accent)">${score.toFixed(1)}</text>
+    `;
+  }
+
+  return `
+    <svg class="rating-radar" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+      ${gridPolygons}
+      ${axes}
+      ${dataPolygon}
+      ${dataDots}
+      ${labels}
+    </svg>
+  `;
+}
+
 function renderHomeProfile(viewingAs, isSelf) {
   const member = DAILY_MEMBERS.find(m => m.name === viewingAs);
   const myReports = dailyReports.filter(r => r.author === viewingAs);
@@ -7273,10 +7879,55 @@ function renderHomeProfile(viewingAs, isSelf) {
           <div class="home-profile-detail-value">${myReports.length > 0 ? Math.round((submitted / myReports.length) * 100) : 0}%</div>
         </div>
       </div>
+
+      <div class="rating-card">
+        <div class="rating-card-header">
+          <div class="rating-card-title">
+            <span>能力评估</span>
+            <span class="rating-card-sub">${getRaterCount(viewingAs)} 人评分</span>
+          </div>
+          <div class="rating-overall">
+            <span class="rating-overall-value">${getOverallScore(viewingAs).toFixed(1)}</span>
+            <span class="rating-overall-unit">/ 10</span>
+          </div>
+        </div>
+        <div class="rating-card-body">
+          <div class="rating-radar-wrap">
+            ${renderRatingRadar(viewingAs)}
+          </div>
+          <div class="rating-dims">
+            ${RATING_DIMENSIONS.map(d => {
+              const myStars = getMyRating(viewingAs, d.key);
+              const avgStars = getAvgStars(viewingAs, d.key);
+              const score = getDimScore(viewingAs, d.key);
+              return `
+                <div class="rating-dim-row">
+                  <div class="rating-dim-name">${d.label}</div>
+                  <div class="rating-dim-stars" data-ratee="${escapeHtml(viewingAs)}" data-dim="${d.key}">
+                    ${[1,2,3,4,5].map(s => `
+                      <span class="rating-star ${s <= myStars ? 'active' : ''}" onclick="rateDimension('${escapeHtml(viewingAs)}', '${d.key}', ${s})" title="${s} 星">★</span>
+                    `).join('')}
+                  </div>
+                  <div class="rating-dim-score">
+                    <span class="rating-dim-avg">${avgStars > 0 ? avgStars.toFixed(1) + '★' : '—'}</span>
+                    <span class="rating-dim-num">${score.toFixed(1)}</span>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      </div>
     </div>
   `;
 
   return html;
+}
+
+// Save a star rating and re-render the profile page
+function rateDimension(rateeName, dimKey, stars) {
+  setMyRating(rateeName, dimKey, stars);
+  renderDailyContent();
 }
 
 function renderDailyList() {
@@ -8198,6 +8849,9 @@ function init() {
   // Load task system data
   loadTsData();
   loadDailyReports();
+  loadDailyHighlights();
+  loadDailyMessages();
+  loadMemberRatings();
   generateDemoDailyReports();
 
   // Default to daily module
